@@ -1,16 +1,10 @@
-!SLIDE
-
 # Intro to Accessibility
 
-!SLIDE
-
-# What Is Web Accessibility?
+## What Is Web Accessibility?
 
 Web accessibility means making online content usable (and enjoyable!) for people with physical, cognitive, and learning disabilities that affect how they interact with the web.
 
-!SLIDE
-
-# Why Be Accessible?
+## Why Be Accessible?
 
 (Besides being the right thing to do, of course.)
 
@@ -20,27 +14,21 @@ Web accessibility means making online content usable (and enjoyable!) for people
 * Accessible websites typically work well on mobile and tablet devices
 * It's easier than it sounds
 
-!SLIDE
-
-# Major Use Cases
+## Major Use Cases
 
 * **Vision** (blindness, low vision, color blindness)
 * **Hearing** (deafness)
 * **Motor skills** (inability to use a mouse)
 * **Cognitive and learning issues** (autism, dyslexia, ADD, etc.)
 
-!SLIDE
-
-# Devices and Supports
+## Devices and Supports
 
 * **Screen readers** and braille readers for text and images
 * **Screen magnification** for low-vision users
 * **Keyboard-only navigation**, or navigation with a joystick or other simplified interface
 * **Captions and transcripts** for video and audio
 
-!SLIDE
-
-# Standards for Accessibility
+## Standards for Accessibility
 
 W3C's [Web Content Accessibility Guidelines](http://www.w3.org/TR/WCAG20/) provides principles and techniques for making web content:
 
@@ -49,9 +37,7 @@ W3C's [Web Content Accessibility Guidelines](http://www.w3.org/TR/WCAG20/) provi
 1. Understandable
 1. Robust
 
-!SLIDE
-
-# In Other Words
+## In Other Words
 
 Can a user...
 
@@ -62,59 +48,44 @@ Can a user...
 
 ... in a way that works for them?
 
-!SLIDE
+## How to Make Accessible Content
 
-# How to Make Accessible Content
+1. Use HTML, CSS, and Javascript correctly.
+2. Create good content with logical organization that humans and machines can understand.
+3. Supplement valid HTML with WAI-ARIA attributes that provide more information to screen readers.
 
-* Use HTML, CSS, and Javascript correctly.
-* Create good content with logical organization that humans and machines can understand.
-
-!SLIDE
-
-# How to Test for Accessible Content
+## How to Test for Accessible Content
 
 * Automated tests
 	* HTML validation
 	* WCAG validation
 * Manual tests
-	* Keyboard navigation
+	* Keyboard-only interaction
 	* Screen reader
 
-!SLIDE
+## Some Examples
 
-# Let's Test a Site!
+### HTML for Accessibility
 
-.note Screenshot of test site on slide; run tests on travel site
+#### Headers and Semantics
 
-!SLIDE
+#### Links
 
-# CSS for Accessibility
+#### Form Fields
 
-## Color Contrast for Text
+### CSS for Accessibility
 
-## Visual :focus States
+#### Color Contrast for Text
 
-.note Adjust styles based on test findings
+#### Visual :focus States
 
-!SLIDE
+### Creating More Structure and Relationships with WAI-ARIA
 
-# Creating More Structure with WAI-ARIA
+#### Major ARIA Roles
 
-.note Intro to ARIA
+## Accessible Dynamic Content
 
-!SLIDE
-
-# Major ARIA Roles
-
-.note Add these to site
-
-!SLIDE
-
-# Accessible Dynamic Content
-
-.note Brief overview of ARIA live regions and alerts, and Javascript for focus
-
-# Resources
+## Resources
 
 * [Web Content Accessibility Guidelines (WCAG) 2.0](http://www.w3.org/TR/WCAG20/)
 * [Accessibility Developer Tools](https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en) extension for Chrome
@@ -122,9 +93,7 @@ Can a user...
 * [VoiceOver on OSX Commands and Gestures](http://www.apple.com/voiceover/info/guide/_1131.html)
 * [VoiceOver on iOS Gestures](http://lab.dotjay.co.uk/notes/voiceover-ios/learning-ios-voiceover-gestures/)
 
-!SLIDE
-
-# Exercises
+## Exercises
 
 1. Test your current Sinatra projects for accessibility using VoiceOver and Chrome Accessibility Developer Tools. If it helps, close your eyes!
 1. Update your CSS with any color contrast changes. You can use the Contrast Ratio tool to try out different contrasts.
