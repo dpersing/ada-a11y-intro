@@ -37,12 +37,10 @@ W3C's [Web Content Accessibility Guidelines](http://www.w3.org/TR/WCAG20/) provi
 1. Understandable
 1. Robust
 
-## In Other Words
+In othe words, can a user...
 
-Can a user...
-
-1. see or hear content
-1. interact with content
+1. access content
+1. use interactive elements
 1. understand and navigate content
 1. use the content on the device of their choice and with the technology of their choice
 
@@ -52,38 +50,83 @@ Can a user...
 
 1. Use HTML, CSS, and Javascript correctly.
 2. Create good content with logical organization that humans and machines can understand.
-3. Supplement valid HTML with WAI-ARIA attributes that provide more information to screen readers.
+3. Supplement valid HTML with some extra attributes that provide more information to screen readers, when appropriate.
+
+That's it!
 
 ## How to Test for Accessible Content
 
-* Automated tests
+### Automated Tests
+
 	* HTML validation
 	* WCAG validation
-* Manual tests
+
+### Manual Tests
+
 	* Keyboard-only interaction
 	* Screen reader
+
+Today we'll be testing with VoiceOver on your Mac.
 
 ## Some Examples
 
 ### HTML for Accessibility
 
-#### Headers and Semantics
+Using valid HTML elements to display text creates a well-structured document and also allows screen reader users to use keyboard shortcuts to "skim" the page by browsing for headers, links, tables, form fields, etc.
+
+#### HTML5 semantic containers
+
+Newer screen readers can pick up on the meaning of semantic HTML5 container elements, creating rich context for reading and browsing.
+
+#### Semantic text elements
+
+Valid and well-written header elements `<h1>` through `<h6>` create a kind of outline of the page.
+
+Paragraphs (`<p>`), lists (`<ol>` and `<ul>`), and other types of elements create logical reading experiences.
 
 #### Links
 
-#### Form Fields
+Links are read by their text, so make text links clear and unique.
+
+#### Images and icons
+
+Images should have `alt` attributes that provide a useful description of the image. If the image is for decoration only, it should be applied through CSS, or should have an empty `alt` value.
+
+Always have a text equivalent for information that is presented in a non-text format.
+
+#### Data tables
+
+Data tables should always have headers (`<th>`) to help situate data.
+
+#### Form fields
+
+Form fields should always have labels or, in the case of buttons, clear text. Elements presented in sets, like radiobuttons and checkboxes, should be grouped with a `<fieldset>` element.
 
 ### CSS for Accessibility
 
-#### Color Contrast for Text
+#### Color contrast for text
 
-#### Visual :focus States
+For users who can't see well and/or who suffer from color blindness, text and backgrounds need to have sufficient contrast to be visible.
 
-### Creating More Structure and Relationships with WAI-ARIA
+#### Visual keyboard focus states
 
-#### Major ARIA Roles
+By default, all browsers show keyboard focus on interactive elements with the `outline` CSS property applied to an element's `:focus` pseudo class.
 
-## Accessible Dynamic Content
+You can replace this default functionality, or also add to it by changing background colors, adding underlines, etc., with CSS.
+
+### More Advanced Stuff
+
+#### WAI-ARIA
+
+(WAI-ARIA) is designed to enhance already well-formed HTML for even greater accessibility.
+
+#### Screen-reader-only text
+
+Information designed for screen readers specifically can be hidden from sighted users.
+
+Why not just use `display: none`?
+
+#### Accessible dynamic content
 
 ## Resources
 
