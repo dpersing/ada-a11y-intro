@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>Keyboard focus test</title>
+
+		<meta char="UTF-8">
+
+		<style>
+			label, fieldset {
+				display: block;
+				margin: 0 0 20px 0;
+			}
+
+			fieldset label {
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Keyboard focus test</h1>
+
+		<p>Here's a regular old <a href="http://adadevelopersacademy.org/">link that goes to the ADA site</a>.</p>
+
+		<form>
+			<label for="textfield">Here's a text field
+				<input type="text" id="textfield" placeholder="with a placeholder">
+			</label>
+
+			<fieldset>
+				<legend>Here are some checkboxes</legend>
+				<label for="checkbox1">Checkbox 1
+					<input type="checkbox" name="checkbox" id="checkbox1" value="checkbox1">
+				</label>
+				<label for="checkbox2">Checkbox 2
+					<input type="checkbox" name="checkbox" id="checkbox2" value="checkbox2">
+				</label>
+				<label for="checkbox3">Checkbox 3
+					<input type="checkbox" name="checkbox" id="checkbox3" value="checkbox3">
+				</label>
+			</fieldset>
+
+			<fieldset>
+				<legend>Here are some radio buttons</legend>
+				<label for="radiobutton1">Radio button 1
+					<input type="radio" name="radio" id="radiobutton1" value="radiobuttion1">
+				</label>
+				<label for="radiobutton2">Radio button 2
+					<input type="radio" name="radio" id="radiobutton2" value="radiobuttion2">
+				</label>
+				<label for="radiobutton3">Radio button 3
+					<input type="radio" name="radio" id="radiobutton3" value="radiobuttion3">
+				</label>
+			</fieldset>
+
+			<label for="selectfield">Here's a select field
+				<select id="selectfield">
+					<option>Option 1</option>
+					<option>Option 2</option>
+					<option>Option 3</option>
+				</select>
+			</label>
+
+			<button>Here's a button</button>
+		</form>
+	</body>
+</html>
