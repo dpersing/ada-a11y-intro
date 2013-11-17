@@ -4,7 +4,9 @@
 
 Web accessibility means making online content usable (and enjoyable!) for people with physical, cognitive, and learning disabilities that affect how they interact with the web.
 
-## Why Be Accessible?
+"Accessibility" is often abbreviated to "a11y."
+
+## Why Be Accessible Online?
 
 * The web is an equalizing force in people's ability to get things done on a daily basis
 * Accessible websites typically are search engine-friendly websites
@@ -20,7 +22,7 @@ Web accessibility means making online content usable (and enjoyable!) for people
 
 ## Devices and Supports
 
-* **Screen readers** and braille readers for text and images
+* **Screen readers** and braille readers for hearing/reading text, images, controls
 * **Screen magnification** for low-vision users
 * **Keyboard-only navigation**, or navigation with a joystick or other simplified interface
 * **Captions and transcripts** for video and audio
@@ -51,19 +53,37 @@ In othe words, can a user...
 
 That's it!
 
-## How to Test for Accessible Content
+## How to Test for Accessibility
 
 ### Automated Tests
 
-* HTML validation
-* WCAG validation
+#### HTML and CSS validation
+
+The first step for automated testing is validating your HTML and CSS.
+
+#### WCAG audit
+
+The second step is running an automated test against WCAG 2.0 principles. These tests will sometimes find false positives for issues, but are a great way to get accustomed to WCAG and techniques for fixing a11y issues issues.
 
 ### Manual Tests
 
-* Keyboard-only interaction
-* Screen reader
+#### Keyboard-only testing
+
+Test using all of the interactive parts of your page using the keyboard alone.
+
+#### Screen reader testing
+
+Test your page with a screen reader, or a screen reader emulator, to see how a user might actually hear the page.
 
 Today we'll be testing with VoiceOver on your Mac.
+
+1. Open System Preferences > Accessibility.
+1. Select "VoiceOver" from the menu.
+1. Check the box.
+
+Or, just press Command + F5 to toggle VoiceOver on or off.
+
+![OSX System Preferences screen, with the Accessibility menu item circled in pink](img/system-a11y-osx.png)
 
 ## Some Examples
 
