@@ -78,7 +78,7 @@ Test using all of the interactive parts of your page using the keyboard alone.
 * **Up and down arrows:** Select a radio button from a set, or an option from a select element.
 * **Spacebar:** Select a choice from a radio button set or select element.
 
-[Try out using the keyboard with different interactive elements.](keyboard-test.html)
+[Try out using the keyboard with different interactive elements.](http://dpersing.github.io/ada-a11y-intro/demo/keyboard-test.html)
 
 #### Screen reader testing
 
@@ -158,7 +158,7 @@ You can replace this default functionality, or also add to it by changing backgr
 
 ## Putting It All Together
 
-Let's run our tests [while we shop for a vacation](ada-a11y-demo/index.html).
+Let's run our tests [while we shop for a vacation](http://dpersing.github.io/ada-a11y-intro/demo/index.html).
 
 ## More Advanced Stuff
 
