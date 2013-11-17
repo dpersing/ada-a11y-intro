@@ -36,7 +36,7 @@ W3C's [Web Content Accessibility Guidelines](http://www.w3.org/TR/WCAG20/) provi
 1. Understandable
 1. Robust
 
-In othe words, can a user...
+In other words, can a user...
 
 1. access content
 1. use interactive elements
@@ -60,6 +60,8 @@ That's it!
 #### HTML and CSS validation
 
 The first step for automated testing is validating your HTML and CSS.
+
+* [Validator.nu (X)HTML5 Validator](http://html5.validator.nu/)
 
 #### WCAG audit
 
