@@ -6,13 +6,10 @@ Web accessibility means making online content usable (and enjoyable!) for people
 
 ## Why Be Accessible?
 
-(Besides being the right thing to do, of course.)
-
-* The population of people using the web is aging
 * The web is an equalizing force in people's ability to get things done on a daily basis
-* Accessible websites typically are SEO-friendly websites
+* Accessible websites typically are search engine-friendly websites
 * Accessible websites typically work well on mobile and tablet devices
-* It's easier than it sounds
+* It's easier than it sounds!
 
 ## Major Use Cases
 
@@ -58,13 +55,13 @@ That's it!
 
 ### Automated Tests
 
-	* HTML validation
-	* WCAG validation
+* HTML validation
+* WCAG validation
 
 ### Manual Tests
 
-	* Keyboard-only interaction
-	* Screen reader
+* Keyboard-only interaction
+* Screen reader
 
 Today we'll be testing with VoiceOver on your Mac.
 
@@ -124,7 +121,7 @@ You can replace this default functionality, or also add to it by changing backgr
 
 Information designed for screen readers specifically can be hidden from sighted users.
 
-Why not just use `display: none`?
+Why not just use `display: none;`?
 
 #### Accessible dynamic content
 
