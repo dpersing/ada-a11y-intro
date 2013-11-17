@@ -156,7 +156,7 @@ You can replace this default functionality, or also add to it by changing backgr
 
 ## Putting It All Together
 
-Let's run our tests while we shop for a vacation.
+Let's run our tests [while we shop for a vacation](ada-a11y-demo/index.html).
 
 ## More Advanced Stuff
 
