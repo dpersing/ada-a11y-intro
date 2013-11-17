@@ -71,17 +71,24 @@ The second step is running an automated test against WCAG 2.0 principles. These 
 
 Test using all of the interactive parts of your page using the keyboard alone.
 
+* **Tab:** Move between interactive elements.
+* **Return/Enter:** "Click" on links or buttons.
+* **Up and down arrows:** Select a radio button from a set, or an option from a select element.
+* **Spacebar:** Select a choice from a radio button set or select element.
+
+[Try out using the keyboard with different interactive elements.](keyboard-test.html)
+
 #### Screen reader testing
 
 Test your page with a screen reader, or a screen reader emulator, to see how a user might actually hear the page.
 
-Today we'll be testing with VoiceOver on your Mac.
+Today we'll be testing with VoiceOver on your Mac. To use VoiceOver:
 
 1. Open System Preferences > Accessibility.
 1. Select "VoiceOver" from the menu.
 1. Check the box.
 
-Or, just press Command + F5 to toggle VoiceOver on or off.
+Or, just press Command (&#8984;) + F5 to toggle VoiceOver on or off.
 
 ![OSX System Preferences screen, with the Accessibility menu item circled in pink](img/system-a11y-osx.png)
 
@@ -95,19 +102,27 @@ Using valid HTML elements to display text creates a well-structured document and
 
 Newer screen readers can pick up on the meaning of semantic HTML5 container elements, creating rich context for reading and browsing.
 
+	* container code sample and demo
+
 #### Semantic text elements
 
 Valid and well-written header elements `<h1>` through `<h6>` create a kind of outline of the page.
 
 Paragraphs (`<p>`), lists (`<ol>` and `<ul>`), and other types of elements create logical reading experiences.
 
+	* semantic code sample and demo
+
 #### Links
 
 Links are read by their text, so make text links clear and unique.
 
-#### Images and icons
+	* link code sample and demo
+
+#### Images
 
 Images should have `alt` attributes that provide a useful description of the image. If the image is for decoration only, it should be applied through CSS, or should have an empty `alt` value.
+
+	* image code sample and demo
 
 Always have a text equivalent for information that is presented in a non-text format.
 
@@ -115,9 +130,13 @@ Always have a text equivalent for information that is presented in a non-text fo
 
 Data tables should always have headers (`<th>`) to help situate data.
 
+	* table code sample and demo
+
 #### Form fields
 
 Form fields should always have labels or, in the case of buttons, clear text. Elements presented in sets, like radiobuttons and checkboxes, should be grouped with a `<fieldset>` element.
+
+	* form code sample and demo
 
 ### CSS for Accessibility
 
@@ -125,25 +144,41 @@ Form fields should always have labels or, in the case of buttons, clear text. El
 
 For users who can't see well and/or who suffer from color blindness, text and backgrounds need to have sufficient contrast to be visible.
 
+	* color contrast example
+
 #### Visual keyboard focus states
 
 By default, all browsers show keyboard focus on interactive elements with the `outline` CSS property applied to an element's `:focus` pseudo class.
 
 You can replace this default functionality, or also add to it by changing background colors, adding underlines, etc., with CSS.
 
-### More Advanced Stuff
+	* keyboard focus example
 
-#### WAI-ARIA
+## Putting It All Together
+
+Let's run our tests while we shop for a vacation.
+
+## More Advanced Stuff
+
+### WAI-ARIA
 
 (WAI-ARIA) is designed to enhance already well-formed HTML for even greater accessibility.
 
-#### Screen-reader-only text
+	* ARIA code sample and example
+
+### Screen-Reader-Only Text
 
 Information designed for screen readers specifically can be hidden from sighted users.
 
+	* ARIA code sample and example
+
 Why not just use `display: none;`?
 
-#### Accessible dynamic content
+### Accessible Dynamic Content
+
+If a user does something that dynamically loads content on the current page, it's helpful to **change context and move keyboard focus** to that new content so that screen reader and keyboard users can have a smoothly flowing experience.
+
+Javascript can be used in conjunction with WAI-ARIA attributes to create a rich, informative experience for screen reader users by dynamically adding and removing different attributes or attribute values as interactions occur.
 
 ## Resources
 
@@ -152,10 +187,14 @@ Why not just use `display: none;`?
 * Lou Verou's [Contrast Ratio](http://leaverou.github.io/contrast-ratio/) tool
 * [VoiceOver on OSX Commands and Gestures](http://www.apple.com/voiceover/info/guide/_1131.html)
 * [VoiceOver on iOS Gestures](http://lab.dotjay.co.uk/notes/voiceover-ios/learning-ios-voiceover-gestures/)
+* [Fangs Screen Reader Emulator](https://addons.mozilla.org/en-us/firefox/addon/fangs-screen-reader-emulator/) for Firefox
+* [NVDA](http://www.nvaccess.org/), a free screen reader for Windows
+* [JAWS](http://www.freedomscientific.com/products/fs/jaws-product-page.asp), a screen reader for Windows with a free demo version
+* [ZoomText](http://www.aisquared.com/zoomtext), a screen reader and magnifier for Windows with a free demo version
 
 ## Exercises
 
-1. Test your current Sinatra projects for accessibility using VoiceOver and Chrome Accessibility Developer Tools. If it helps, close your eyes!
+1. Test your current Sinatra projects for accessibility using VoiceOver and Chrome Accessibility Developer Tools. If it helps, close your eyes! (Also potentially be kind to your neighbors by wearing headphones.)
 1. Update your CSS with any color contrast changes. You can use the Contrast Ratio tool to try out different contrasts.
 1. Update your HTML with any element or attribute changes or updates.
 1. Rerun your tests.
