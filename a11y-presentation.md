@@ -57,15 +57,19 @@ That's it!
 
 ### Automated Tests
 
-#### HTML and CSS validation
+#### HTML validation
 
-The first step for automated testing is validating your HTML and CSS.
+The first step for automated testing is validating your HTML.
 
+* [W3C Markup Validation Service](http://validator.w3.org/)
 * [Validator.nu (X)HTML5 Validator](http://html5.validator.nu/)
 
 #### WCAG audit
 
 The second step is running an automated test against WCAG 2.0 principles. These tests will sometimes find false positives for issues, but are a great way to get accustomed to WCAG and techniques for fixing a11y issues issues.
+
+* [Chrome Accessibility Developer Tools](https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en) is an add-on for Chrome that adds an accessibility audit to the existing Web Inspector tools.
+* [HTML_Codesniffer](http://squizlabs.github.io/HTML_CodeSniffer/) is an in-browser tool and bookmarklet for any browser that checks your code against WCAG 2.0.
 
 ### Manual Tests
 
@@ -99,12 +103,6 @@ Or, just press Command (&#8984;) + F5 to toggle VoiceOver on or off.
 ### HTML for Accessibility
 
 Using valid HTML elements to display text creates a well-structured document and also allows screen reader users to use keyboard shortcuts to "skim" the page by browsing for headers, links, tables, form fields, etc.
-
-#### HTML5 semantic containers
-
-Newer screen readers can pick up on the meaning of semantic HTML5 container elements, creating rich context for reading and browsing.
-
-	* container code sample and demo
 
 #### Semantic text elements
 
@@ -184,6 +182,7 @@ Javascript can be used in conjunction with WAI-ARIA attributes to create a rich,
 
 ## Resources
 
+* [HTML5 Doctor](http://html5doctor.com/)
 * [Web Content Accessibility Guidelines (WCAG) 2.0](http://www.w3.org/TR/WCAG20/)
 * [Accessibility Developer Tools](https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en) extension for Chrome
 * Lou Verou's [Contrast Ratio](http://leaverou.github.io/contrast-ratio/) tool
