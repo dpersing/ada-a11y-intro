@@ -238,7 +238,7 @@ You can replace this default functionality, or also add to it by changing backgr
 
 ## Putting It All Together
 
-Let's run our tests [while we shop for a vacation!](http://dpersing.github.io/ada-a11y-intro/demo/index.html).
+Good news, everyone! We've won a fabulous vacation. [Let's run our tests while we learn about the trip!](http://dpersing.github.io/ada-a11y-intro/demo/vacation.html)
 
 ## More Advanced Stuff
 
