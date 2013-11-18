@@ -4,7 +4,7 @@
 
 Web accessibility means making online content usable (and enjoyable!) for people with physical, cognitive, and learning disabilities that affect how they interact with the web.
 
-"Accessibility" is often abbreviated to "a11y."
+Fun fact: "Accessibility" is often abbreviated to "a11y" for hashtaggery.
 
 ## Why Be Accessible Online?
 
@@ -110,7 +110,21 @@ Valid and well-written header elements `<h1>` through `<h6>` create a kind of ou
 
 Paragraphs (`<p>`), lists (`<ol>` and `<ul>`), and other types of elements create logical reading experiences.
 
-	* semantic code sample and demo
+```
+<h1>Every page should have an h1!</h1>
+<h2>Smaller sections should have h2s</h2>
+<h3>And then h3s, if appropriate, etc.</h3>
+
+<p>Blocks of text should usually be paragraphs.</p>
+
+<ul>
+	<li>Lists should be used for</li>
+	<li>Well, lists</li>
+	<li>You know</li>
+</ul>
+```
+
+[Try out using VoiceOver shortcuts to read text.](http://dpersing.github.io/ada-a11y-intro/demo/text-test.html)
 
 #### Links
 
