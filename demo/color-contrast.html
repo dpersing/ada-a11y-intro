@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>Color contrast examples</title>
+
+		<meta char="UTF-8">
+
+		<style>
+			body {font-family: Helvetica, sans-serif; width: 600px; margin: 0 auto; background: #fff; color: #000;}
+
+			.contrast {padding: 20px; border: 1px solid;}
+
+			.toolight {color: #999;}
+
+			.toolightsmall {background: #819ff7; color: #444;}
+
+			.justright {background: #f3f781; color: #666;}
+
+			.goldstar {background: #fff; color: #555;}
+		</style>
+	</head>
+	<body>
+		<h1>Color contrast examples</h1>
+
+		<p>To check your color contrast:</p>
+
+		<ol>
+			<li>Get your text and background color values from Web Inspector.</li>
+			<li>Plug them into <a href="http://leaverou.github.io/contrast-ratio/">Lea Verou's Contrast Ratio</a> tool.</li>
+			<li>Get feedback that compares your colors to WCAG 2.0 standards.</li>
+		</ol>
+
+		<p class="contrast toolight">This text is too light for any size or weight.</p>
+
+		<p class="contrast toolightsmall">This text is too light for some sizes and weights.</p>
+
+		<p class="contrast justright">This text is just right at an size for most people!</p>
+
+		<p class="contrast goldstar">This text is good for everyone!</p>
+
+		<p><strong>Fun fact:</strong> <a href="http://lea.verou.me/about/">Lea Verou</a> is a lady developer who is <a href="">an open source contributor on GitHub</a> and who works for the W3C!</p>
+	</body>
+</html>

@@ -4,7 +4,7 @@
 
 Web accessibility means making online content usable (and enjoyable!) for people with physical, cognitive, and learning disabilities that affect how they interact with the web.
 
-"Accessibility" is often abbreviated to "a11y."
+**Fun fact:** "Accessibility" is often abbreviated to "a11y" for hashtaggery.
 
 ## Why Be Accessible Online?
 
@@ -57,15 +57,19 @@ That's it!
 
 ### Automated Tests
 
-#### HTML and CSS validation
+#### HTML validation
 
-The first step for automated testing is validating your HTML and CSS.
+The first step for automated testing is validating your HTML.
 
+* [W3C Markup Validation Service](http://validator.w3.org/)
 * [Validator.nu (X)HTML5 Validator](http://html5.validator.nu/)
 
 #### WCAG audit
 
 The second step is running an automated test against WCAG 2.0 principles. These tests will sometimes find false positives for issues, but are a great way to get accustomed to WCAG and techniques for fixing a11y issues issues.
+
+* [Chrome Accessibility Developer Tools](https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en) is an add-on for Chrome that adds an accessibility audit to the existing Web Inspector tools.
+* [HTML_Codesniffer](http://squizlabs.github.io/HTML_CodeSniffer/) is an in-browser tool and bookmarklet for any browser that checks your code against WCAG 2.0.
 
 ### Manual Tests
 
@@ -77,8 +81,6 @@ Test using all of the interactive parts of your page using the keyboard alone.
 * **Return/Enter:** "Click" on links or buttons.
 * **Up and down arrows:** Select a radio button from a set, or an option from a select element.
 * **Spacebar:** Select a choice from a radio button set or select element.
-
-[Try out using the keyboard with different interactive elements.](keyboard-test.html)
 
 #### Screen reader testing
 
@@ -100,45 +102,123 @@ Or, just press Command (&#8984;) + F5 to toggle VoiceOver on or off.
 
 Using valid HTML elements to display text creates a well-structured document and also allows screen reader users to use keyboard shortcuts to "skim" the page by browsing for headers, links, tables, form fields, etc.
 
-#### HTML5 semantic containers
-
-Newer screen readers can pick up on the meaning of semantic HTML5 container elements, creating rich context for reading and browsing.
-
-	* container code sample and demo
-
 #### Semantic text elements
 
 Valid and well-written header elements `<h1>` through `<h6>` create a kind of outline of the page.
 
 Paragraphs (`<p>`), lists (`<ol>` and `<ul>`), and other types of elements create logical reading experiences.
 
-	* semantic code sample and demo
+```
+<h1>Every page should have an h1!</h1>
+<h2>Smaller sections should have h2s</h2>
+<h3>And then h3s, if appropriate, etc.</h3>
+
+<p>Blocks of text should usually be paragraphs.</p>
+
+<ul>
+	<li>Lists should be used for</li>
+	<li>Well, lists</li>
+	<li>You know</li>
+</ul>
+```
 
 #### Links
 
 Links are read by their text, so make text links clear and unique.
 
-	* link code sample and demo
+```
+<a href="http://adadevelopersacademy.org/">This link</a>
+
+and
+
+<a href="https://twitter.com/adaacademy">this link</a>
+
+will read the same to screen readers, even though they go to different URLs.
+```
 
 #### Images
 
 Images should have `alt` attributes that provide a useful description of the image. If the image is for decoration only, it should be applied through CSS, or should have an empty `alt` value.
 
-	* image code sample and demo
+```
+<img src="http://placekitten.com/300/300" alt="an adorable tabby kitten" />
+```
 
-Always have a text equivalent for information that is presented in a non-text format.
+Always have a text equivalent for information that is presented in a non-text format, such as images, standalone icons, etc.
 
 #### Data tables
 
-Data tables should always have headers (`<th>`) to help situate data.
+Data tables should always have headers (`<th>`) to help situate data, and `scope` attributes for multiple headers on different axes.
 
-	* table code sample and demo
+```
+<table>
+	<caption>Upcoming Birthdays</caption>
+	<tr>
+		<th scope="col">Name</th>
+		<th scope="col">Date</th>
+	</tr>
+	<tr>
+	<th scope="row">Laura</th>
+		<td>December 6</td>
+	</tr>
+	<tr>
+		<th scope="row">Bill</th>
+		<td>December 12</td>
+	</tr>
+	<tr>
+		<th scope="row">Kai</th>
+		<td>December 14</td>
+	</tr>
+	<tr>
+		<th scope="row">Jessica</th>
+		<td>January 8</td>
+	</tr>
+	<tr>
+		<th scope="row">Kayle</th>
+		<td>January 9</td>
+	</tr>
+</table>
+```
 
 #### Form fields
 
 Form fields should always have labels or, in the case of buttons, clear text. Elements presented in sets, like radiobuttons and checkboxes, should be grouped with a `<fieldset>` element.
 
-	* form code sample and demo
+```
+<form>
+	<label>Name
+		<input type="text">
+	</label>
+	<label>Phone
+		<input type="text">
+	</label>
+	<fieldset>
+		<legend>Order type</legend>
+		<label>Takeout
+			<input type="radio" name="order" value="takeout">
+		</label>
+		<label>Delivery
+			<input type="radio" name="order" value="delivery">
+		</label>
+	</fieldset>
+	<fieldset>
+		<legend>Toppings</legend>
+		<label>Extra cheese
+			<input type="checkbox" name="toppings" value="cheese">
+		</label>		
+		<label>Mushrooms
+			<input type="checkbox" name="toppings" value="mushrooms">
+		</label>
+		<label>Pepperoni
+			<input type="checkbox" name="toppings" value="pepperoni">
+		</label>
+		<label>Pineapple
+			<input type="checkbox" name="toppings" value="pineapple">
+		</label>
+	</fieldset>
+	<button type="submit">Submit order</button>
+</form>
+```
 
 ### CSS for Accessibility
 
@@ -146,7 +226,7 @@ Form fields should always have labels or, in the case of buttons, clear text. El
 
 For users who can't see well and/or who suffer from color blindness, text and backgrounds need to have sufficient contrast to be visible.
 
-	* color contrast example
+[Let's look at some examples.](http://dpersing.github.io/ada-a11y-intro/demo/color-contrast.html)
 
 #### Visual keyboard focus states
 
@@ -158,7 +238,7 @@ You can replace this default functionality, or also add to it by changing backgr
 
 ## Putting It All Together
 
-Let's run our tests [while we shop for a vacation](ada-a11y-demo/index.html).
+Let's run our tests [while we shop for a vacation!](http://dpersing.github.io/ada-a11y-intro/demo/index.html).
 
 ## More Advanced Stuff
 
@@ -183,6 +263,13 @@ If a user does something that dynamically loads content on the current page, it'
 Javascript can be used in conjunction with WAI-ARIA attributes to create a rich, informative experience for screen reader users by dynamically adding and removing different attributes or attribute values as interactions occur.
 
 ## Resources
+
+### Techniques
+
+* [WebAIM](http://webaim.org/) has how-tos, news, and lots of resources related to a11y
+* [Web Axe](http://www.webaxe.org/) is a blog and podcast about accessiblity issues
+
+### Tools
 
 * [Web Content Accessibility Guidelines (WCAG) 2.0](http://www.w3.org/TR/WCAG20/)
 * [Accessibility Developer Tools](https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en) extension for Chrome
