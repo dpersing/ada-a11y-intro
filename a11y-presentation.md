@@ -4,7 +4,7 @@
 
 Web accessibility means making online content usable (and enjoyable!) for people with physical, cognitive, and learning disabilities that affect how they interact with the web.
 
-Fun fact: "Accessibility" is often abbreviated to "a11y" for hashtaggery.
+**Fun fact:** "Accessibility" is often abbreviated to "a11y" for hashtaggery.
 
 ## Why Be Accessible Online?
 
@@ -82,8 +82,6 @@ Test using all of the interactive parts of your page using the keyboard alone.
 * **Up and down arrows:** Select a radio button from a set, or an option from a select element.
 * **Spacebar:** Select a choice from a radio button set or select element.
 
-[Try out using the keyboard with different interactive elements.](http://dpersing.github.io/ada-a11y-intro/demo/keyboard-test.html)
-
 #### Screen reader testing
 
 Test your page with a screen reader, or a screen reader emulator, to see how a user might actually hear the page.
@@ -124,33 +122,103 @@ Paragraphs (`<p>`), lists (`<ol>` and `<ul>`), and other types of elements creat
 </ul>
 ```
 
-[Try out using VoiceOver shortcuts to read text.](http://dpersing.github.io/ada-a11y-intro/demo/text-test.html)
-
 #### Links
 
 Links are read by their text, so make text links clear and unique.
 
-	* link code sample and demo
+```
+<a href="http://adadevelopersacademy.org/">This link</a>
+
+and
+
+<a href="https://twitter.com/adaacademy">this link</a>
+
+will read the same to screen readers, even though they go to different URLs.
+```
 
 #### Images
 
 Images should have `alt` attributes that provide a useful description of the image. If the image is for decoration only, it should be applied through CSS, or should have an empty `alt` value.
 
-	* image code sample and demo
+```
+<img src="http://placekitten.com/300/300" alt="an adorable tabby kitten" />
+```
 
-Always have a text equivalent for information that is presented in a non-text format.
+Always have a text equivalent for information that is presented in a non-text format, such as images, standalone icons, etc.
 
 #### Data tables
 
-Data tables should always have headers (`<th>`) to help situate data.
+Data tables should always have headers (`<th>`) to help situate data, and `scope` attributes for multiple headers on different axes.
 
-	* table code sample and demo
+```
+<table>
+	<caption>Upcoming Birthdays</caption>
+	<tr>
+		<th scope="col">Name</th>
+		<th scope="col">Date</th>
+	</tr>
+	<tr>
+	<th scope="row">Laura</th>
+		<td>December 6</td>
+	</tr>
+	<tr>
+		<th scope="row">Bill</th>
+		<td>December 12</td>
+	</tr>
+	<tr>
+		<th scope="row">Kai</th>
+		<td>December 14</td>
+	</tr>
+	<tr>
+		<th scope="row">Jessica</th>
+		<td>January 8</td>
+	</tr>
+	<tr>
+		<th scope="row">Kayle</th>
+		<td>January 9</td>
+	</tr>
+</table>
+```
 
 #### Form fields
 
 Form fields should always have labels or, in the case of buttons, clear text. Elements presented in sets, like radiobuttons and checkboxes, should be grouped with a `<fieldset>` element.
 
-	* form code sample and demo
+```
+<form>
+	<label>Name
+		<input type="text">
+	</label>
+	<label>Phone
+		<input type="text">
+	</label>
+	<fieldset>
+		<legend>Order type</legend>
+		<label>Takeout
+			<input type="radio" name="order" value="takeout">
+		</label>
+		<label>Delivery
+			<input type="radio" name="order" value="delivery">
+		</label>
+	</fieldset>
+	<fieldset>
+		<legend>Toppings</legend>
+		<label>Extra cheese
+			<input type="checkbox" name="toppings" value="cheese">
+		</label>		
+		<label>Mushrooms
+			<input type="checkbox" name="toppings" value="mushrooms">
+		</label>
+		<label>Pepperoni
+			<input type="checkbox" name="toppings" value="pepperoni">
+		</label>
+		<label>Pineapple
+			<input type="checkbox" name="toppings" value="pineapple">
+		</label>
+	</fieldset>
+	<button type="submit">Submit order</button>
+</form>
+```
 
 ### CSS for Accessibility
 
@@ -158,7 +226,7 @@ Form fields should always have labels or, in the case of buttons, clear text. El
 
 For users who can't see well and/or who suffer from color blindness, text and backgrounds need to have sufficient contrast to be visible.
 
-	* color contrast example
+[Let's look at some examples.](http://dpersing.github.io/ada-a11y-intro/demo/color-contrast.html)
 
 #### Visual keyboard focus states
 
@@ -170,7 +238,7 @@ You can replace this default functionality, or also add to it by changing backgr
 
 ## Putting It All Together
 
-Let's run our tests [while we shop for a vacation](http://dpersing.github.io/ada-a11y-intro/demo/index.html).
+Let's run our tests [while we shop for a vacation!](http://dpersing.github.io/ada-a11y-intro/demo/index.html).
 
 ## More Advanced Stuff
 
@@ -196,7 +264,13 @@ Javascript can be used in conjunction with WAI-ARIA attributes to create a rich,
 
 ## Resources
 
-* [HTML5 Doctor](http://html5doctor.com/)
+### Techniques
+
+* [WebAIM](http://webaim.org/) has how-tos, news, and lots of resources related to a11y
+* [Web Axe](http://www.webaxe.org/) is a blog and podcast about accessiblity issues
+
+### Tools
+
 * [Web Content Accessibility Guidelines (WCAG) 2.0](http://www.w3.org/TR/WCAG20/)
 * [Accessibility Developer Tools](https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en) extension for Chrome
 * Lou Verou's [Contrast Ratio](http://leaverou.github.io/contrast-ratio/) tool
