@@ -29,7 +29,7 @@ Web accessibility means making online content usable (and enjoyable!) for people
 
 ## Standards for Accessibility
 
-W3C's [Web Content Accessibility Guidelines](http://www.w3.org/TR/WCAG20/) provides principles and techniques for making web content:
+W3C's [Web Content Accessibility Guidelines](http://www.w3.org/TR/WCAG20/) (WCAG) provides principles and techniques for making web content:
 
 1. Perceivable
 1. Operable
@@ -44,6 +44,8 @@ In other words, can a user...
 1. use the content on the device of their choice and with the technology of their choice
 
 ... in a way that works for them?
+
+WCAG is currently in its second version, so it's often called WCAG 2.0. WCAG also has three levels of compliance, from least strict (Level A) to most strict (Level AAA). **Most commonly we target Level AA**.
 
 ## How to Make Accessible Content
 
@@ -110,7 +112,9 @@ Paragraphs (`<p>`), lists (`<ol>` and `<ul>`), and other types of elements creat
 
 ```
 <h1>Every page should have an h1!</h1>
+
 <h2>Smaller sections should have h2s</h2>
+
 <h3>And then h3s, if appropriate, etc.</h3>
 
 <p>Blocks of text should usually be paragraphs.</p>
@@ -234,7 +238,64 @@ By default, all browsers show keyboard focus on interactive elements with the `o
 
 You can replace this default functionality, or also add to it by changing background colors, adding underlines, etc., with CSS.
 
-	* keyboard focus example
+### WAI-ARIA
+
+[Web Accessibility Initiative Accessible Rich Internet Applications](http://www.w3.org/TR/wai-aria/) (WAI-ARIA) are designed to enhance already well-formed HTML for even greater accessibility.
+
+WAI-ARIA consists of different types of attributes used to convey more information about elements and relationships between elements to screen readers. Newer screen readers can identify these values and use them when they're announcing content to users.
+
+Here are some examples!
+
+* `role` indicates the element's role on the page. In this case, we have a navigation group, which most newer screen readers will be able to identify.
+* `aria-labelledby` will help tie a clear relationship between, say, shorts and their bottoms category.
+
+```
+<nav role="navigation">
+	<ul>
+		<li><a href="#" id="nav-tops">Tops</a>
+			<ul aria-labelledby="nav-tops">
+				<li><a href="tops/t-shirts.html">T-Shirts</a></li>
+				<li><a href="tops/tanks.html">Tanks</a></li>
+				<li><a href="tops/button-ups.html">Button-Ups</a></li>
+			</ul>
+		</li>
+		<li><a href="#" id="nav-bottoms">Bottoms</a>
+			<ul aria-labelledby="nav-bottoms">
+				<li><a href="bottoms/jeans.html">Jeans</a></li>
+				<li><a href="bottoms/skirts.html">Skirts</a></li>
+				<li><a href="bottoms/shorts.html">Shorts</a></li>
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+```
+
+There's a whole set of `role` attributes called Landmark Roles that can be applied to different areas of the page. These form a kind of outline of the types of content that appear on the page and help screen reader users "skim" the page.
+
+```
+<header>
+	<img src="site-logo.png" role="banner" alt="Site Name">
+	<!-- The banner role correlates to a site's logo or name. -->
+	<nav role="navigation">
+		<!-- Here's where the site global nav might live. -->
+	</nav>
+	<form role="search">
+		<!-- Here's where the site search might live. -->
+	</form>
+</header>>
+<main role="main">
+	<!-- The main content of the page would be the main column of text, for example. --> 
+</main>
+<aside role="complementary">
+	<!-- Here's supportive information, like "about" blurbs, or other products, etc. -->
+</aside>
+<footer role="contentinfo">
+	<!-- Meta-information that describes the content, like copyright dates, might live here. -->
+</footer>
+```
+
+**Fun fact:** If you're noticing similarities between WAI-ARIA roles and HTML5 container elements, that's no accident. WAI-ARIA precedes HTML5, but has similar goals for creating semantic containers and labels for content.
 
 ## Putting It All Together
 
@@ -242,19 +303,14 @@ Good news, everyone! We've won a fabulous vacation. [Let's run our tests while w
 
 ## More Advanced Stuff
 
-### WAI-ARIA
-
-(WAI-ARIA) is designed to enhance already well-formed HTML for even greater accessibility.
-
-	* ARIA code sample and example
-
 ### Screen-Reader-Only Text
 
-Information designed for screen readers specifically can be hidden from sighted users.
+Information designed for screen readers specifically can be hidden from sighted users. You might want to do this if you're using icons to supplement text labels, or if some information is conveyed through visual design that's not apparent in the text alone.
 
 	* ARIA code sample and example
 
-Why not just use `display: none;`?
+**Q:** Why not just use `display: none;` to visually hide content?
+**A:** `display: none;` hides content from sighted users and screen readers as well. It signals that content should be hidden altogether.
 
 ### Accessible Dynamic Content
 
