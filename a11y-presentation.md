@@ -96,7 +96,7 @@ Today we'll be testing with VoiceOver on your Mac. To use VoiceOver:
 
 Or, just press Command (&#8984;) + F5 to toggle VoiceOver on or off.
 
-![OSX System Preferences screen, with the Accessibility menu item circled in pink](img/system-a11y-osx.png)
+![OSX System Preferences screen, with the Accessibility menu item circled in pink](http://dpersing.github.io/ada-a11y-intro/demo/img/system-a11y-osx.png)
 
 ## Some Examples
 
@@ -303,31 +303,36 @@ Good news, everyone! We've won a fabulous vacation. [Let's run our tests while w
 
 ## More Advanced Stuff
 
-### Screen-Reader-Only Text
+### WAI-ARIA Widget Roles
 
-Information designed for screen readers specifically can be hidden from sighted users. You might want to do this if you're using icons to supplement text labels, or if some information is conveyed through visual design that's not apparent in the text alone.
+What if you want more options for controls and dynamic content on the page? WAI-ARIA Widget Roles provide some enhancements like:
 
-	* ARIA code sample and example
+* `alert` roles for important content that should get announced ASAP.
+* `progressbar` roles for showing progress load.
+* `tab` roles can be easily styled like links or buttons but function like radio buttons.
+* `tooltip` roles can provide extra info when a user hovers or clicks on a link or button.
 
-**Q:** Why not just use `display: none;` to visually hide content?
-**A:** `display: none;` hides content from sighted users and screen readers as well. It signals that content should be hidden altogether.
-
-### Accessible Dynamic Content
+### Combining WAI-ARIA Roles and Javascript
 
 If a user does something that dynamically loads content on the current page, it's helpful to **change context and move keyboard focus** to that new content so that screen reader and keyboard users can have a smoothly flowing experience.
 
-Javascript can be used in conjunction with WAI-ARIA attributes to create a rich, informative experience for screen reader users by dynamically adding and removing different attributes or attribute values as interactions occur.
+Javascript can be used in conjunction with WAI-ARIA attributes to create a rich, informative experience for screen reader users by dynamically adding and removing different attributes or attribute values as interactions occur and new content loads on the page.
 
 ## Resources
+
+### Guidelines and Specs
+
+* [WAI-ARIA](http://www.w3.org/TR/wai-aria/)
+* [Web Content Accessibility Guidelines (WCAG) 2.0](http://www.w3.org/TR/WCAG20/)
 
 ### Techniques
 
 * [WebAIM](http://webaim.org/) has how-tos, news, and lots of resources related to a11y
 * [Web Axe](http://www.webaxe.org/) is a blog and podcast about accessiblity issues
+* [Places It's Tempting to Use Display: None; But Don't](http://css-tricks.com/places-its-tempting-to-use-display-none-but-dont/) gives a nice rundown of using CSS to hide content visually-only.
 
 ### Tools
 
-* [Web Content Accessibility Guidelines (WCAG) 2.0](http://www.w3.org/TR/WCAG20/)
 * [Accessibility Developer Tools](https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en) extension for Chrome
 * Lou Verou's [Contrast Ratio](http://leaverou.github.io/contrast-ratio/) tool
 * [VoiceOver on OSX Commands and Gestures](http://www.apple.com/voiceover/info/guide/_1131.html)
@@ -341,6 +346,7 @@ Javascript can be used in conjunction with WAI-ARIA attributes to create a rich,
 
 1. Test your current Sinatra projects for accessibility using VoiceOver and Chrome Accessibility Developer Tools. If it helps, close your eyes! (Also potentially be kind to your neighbors by wearing headphones.)
 1. Update your CSS with any color contrast changes. You can use the Contrast Ratio tool to try out different contrasts.
-1. Update your HTML with any element or attribute changes or updates.
+1. Update your HTML with WAI-ARIA Landmark Roles when they are applicable.
+1. Update any other HTML elemnents or attributes that aren't valid or don't read as you expect them to.
 1. Rerun your tests.
 1. Have a partner test your project with VoiceOver.
