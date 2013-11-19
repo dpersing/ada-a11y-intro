@@ -238,6 +238,22 @@ By default, all browsers show keyboard focus on interactive elements with the `o
 
 You can replace this default functionality, or also add to it by changing background colors, adding underlines, etc., with CSS.
 
+#### Screen-reader-only CSS
+
+Sometimes you'll want to add extra text for screen readers. This might be because information is conveyed visually with icons, or colors, or other design elements.
+
+This can be done with some CSS that we can apply with a class on any element:
+
+```
+.visuallyhidden { 
+  position: absolute; 
+  overflow: hidden; 
+  clip: rect(0 0 0 0); 
+  height: 1px; width: 1px; 
+  margin: -1px; padding: 0; border: 0; 
+}
+```
+
 ### WAI-ARIA
 
 [Web Accessibility Initiative Accessible Rich Internet Applications](http://www.w3.org/TR/wai-aria/) (WAI-ARIA) are designed to enhance already well-formed HTML for even greater accessibility.
