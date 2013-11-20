@@ -70,37 +70,40 @@
       </section>
 
       <section class="row">
-        <div class="col-sm-4 panel">
-          <img src="http://placekitten.com/600/400" class="img-responsive img-rounded" alt="...">
+        <div class="col-sm-4">
+          <img src="http://placekitten.com/600/400" class="img-responsive img-rounded" alt="Photo: a comfortable, modern beach house">
           <h3>Cozy Cottages</h3>
-          <p>...</p>
-          <a href="#" class="btn btn-info">Learn more</a>
+          <p>Our guests stay in comfortable, modern cottages overlooking the sea. Each cottage is within easy walking distance to our taco trucks, ice cream stands, bars, restaurants, and petting zoos.</p>
+          <a href="#" class="btn btn-info">Learn more<span class="sr-only"> about our amenities</span></a>
         </div>
 
-        <div class="col-sm-4 panel">
-          <img src="http://placekitten.com/600/400" class="img-responsive img-rounded" alt="...">
-          <h3>Friendly Neighbors</h3>
-          <p>...</p>
-          <a href="#" class="btn btn-info">Learn more</a>
+        <div class="col-sm-4">
+          <img src="http://placekitten.com/600/400" class="img-responsive img-rounded" alt="Photo: a beautiful beach with happy vacationers">
+          <h3>Beautiful Scenery</h3>
+          <p>Enjoy breathtaking views, hiking, swimming, and more at our scenic locations. Don't forget to make use our complementary life jackets for adults, children, and critters if you go boating!</p>
+          <a href="#" class="btn btn-info">Learn more<span class="sr-only"> about our locations</span></a>
         </div>
 
-        <div class="col-sm-4 panel">
-          <img src="http://placekitten.com/600/400" class="img-responsive img-rounded" alt="...">
+        <div class="col-sm-4">
+          <img src="http://placekitten.com/600/400" class="img-responsive img-rounded" alt="Photo: a brown and gold striped tabby kitten">
           <h3>Adorable Cats</h3>
-          <p>...</p>
-          <a href="#" class="btn btn-info">Learn more</a>
+          <p>Each of our cottages comes fully stocked with all the amenties your feline companions will need. Let us choose a variety of cats for your stay, or let us know your favorite breeds and personalities.</p>
+          <a href="#" class="btn btn-info">Learn more<span class="sr-only"> about our cats</span></a>
         </div>
       </section>
 
       <div class="row">
         <section class="col-sm-6">
-          <h2 id="rates">Rates</h2>
+          <h2 id="rates"><b class="glyphicon glyphicon-home" aria-hidden="true"></b> Rates</h2>
           <table aria-labelledby="rates" class="table table-striped">
-            <tr>
-              <th scope="col">Guest Type</th>
-              <th scope="col">Per Night</th>
-              <th scope="col">Per Week</th>
-            </tr>
+            <thead>
+              <tr>
+                <th scope="col">Guest Type</th>
+                <th scope="col">Per Night</th>
+                <th scope="col">Per Week</th>
+              </tr>
+            </thead>
+            <tbody>
             <tr>
               <th scope="row">Adults</th>
               <td>$60</td>
@@ -111,11 +114,28 @@
               <td>$40</td>
               <td>$220</td>
             </tr>
+            </tbody>
           </table>
+
+          <aside role="complementary">
+            <h2><b class="glyphicon glyphicon-heart" aria-hidden="true"></b> About Our Cats</h2>
+            <p>We're proud to host many breeds of cats (and other animals!):</p>
+            <ul>
+              <li>Maine Coon</li>
+              <li>Ragdoll</li>
+              <li>Scottish Fold</li>
+              <li>Siamese</li>
+              <li>Tabbies</li>
+              <li>That kind that looks like Wilfred Brimley</li>
+              <li>And many more!</li>
+            </ul>
+          </aside>
+
+          <img src="http://placekitten.com/600/600" class="img-responsive img-rounded" alt="Photo: a very fuzzy, surprised-looking kitten">
         </section>
 
         <section id="booking" class="col-sm-6">
-          <h2>Book a Stay</h2>
+          <h2><b class="glyphicon glyphicon-calendar" aria-hidden="true"></b> Book a Stay</h2>
 
           <form role="form">
             <fieldset>
@@ -156,41 +176,52 @@
             <div class="row">
               <fieldset class="col-sm-6">
                 <legend>Cat Preference</legend>
-
-                <div class="form-group">
-                  <div class="form-control">
-                    <input type="radio" id="prefer-cats" name="preference">
-                    <label for="prefer-cats">Adult Cats</label>
-                  </div>
-                  <div class="form-control">
-                    <input type="radio" id="prefer-kittens" name="preference">
-                    <label for="prefer-kittens">Kittens</label>
-                  </div>
-                  <div class="form-control">              
-                    <input type="radio" id="prefer-none" name="preference">
-                    <label for="prefer-none">No Preference</label>
-                  </div>
+                <div class="radio">
+                  <label for="prefer-cats">
+                    <input type="radio" id="prefer-cats" name="preference" value="prefer-cats">
+                    Adult Cats
+                  </label>
+                </div>
+                <div class="radio">
+                  <label for="prefer-kittens">
+                    <input type="radio" id="prefer-kittens" name="preference" value="prefer-kittens">
+                    Kittens
+                  </label>
+                </div>
+                <div class="radio">
+                  <label for="prefer-none">
+                    <input type="radio" id="prefer-none" name="preference" value="prefer-none">
+                    No Preference
+                  </label>
                 </div>
               </fieldset>
 
               <fieldset class="col-sm-6">
                 <legend>Additional Animals</legend>
-
-                <div class="form-group">
-                  <div class="form-control">
-                    <input type="checkbox" id="extra-dogs" name="extras">
-                    <label for="extra-dogs">Yes! I also like dogs.</label>
-                  </div>
-                  <div class="form-control">
-                    <input type="checkbox" id="extra-wombats" name="extras">
-                    <label for="extra-wombats">Yes! I also like wombats.</label>
-                  </div>
-                  <div class="form-control">
-                    <input type="checkbox" id="extra-llamas" name="extras">
-                    <label for="extra-llamas">Yes! I also like llamas.</label>
-                  </div>
+                <div class="checkbox">
+                  <label for="extra-dogs">
+                    <input type="checkbox" id="extra-dogs" name="extras" value="extra-dogs">
+                    Yes! I also like dogs.
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="extra-sloths">
+                    <input type="checkbox" id="extra-sloths" name="extras" value="extra-sloths">
+                    Yes! I also like sloths.
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="extra-llamas">
+                    <input type="checkbox" id="extra-llamas" name="extras" value="extra-sloths">
+                    Yes! I also like llamas.
+                  </label>
                 </div>
               </fieldset>
+            </div>
+
+            <div class="form-group">
+                <label for="requests">Specific Animal Requests</label>
+                <textarea id="requests" class="form-control"></textarea>
             </div>
 
             <fieldset>
@@ -212,14 +243,13 @@
               </div>
             </fieldset>
 
-            <button class="btn btn-lg btn-success">Submit</button>
+            <button type="submit" class="btn btn-lg btn-success">Submit</button>
           </form>
         </section>
       </div>
     </main>
-
-    <footer class="well" role="contentinfo">
-      <p>This site was built using <a href="http://getbootstrap.com/">Twitter Bootstrap</a> (v3) to demonstrate introductory accessibility principles to students at <a href="http://adadevelopersacademy.org/">Ada Developers Academy</a>.</p>
+    <footer class="col-sm-12 well" role="contentinfo">
+      <p>This site was built using <a href="http://getbootstrap.com/">Twitter Bootstrap</a> (v3) and <a href="http://glyphicons.com/">Glyphicons</a> to demonstrate introductory accessibility principles to students at <a href="http://adadevelopersacademy.org/">Ada Developers Academy</a>.</p>
 
       <p><a href="https://github.com/dpersing/ada-a11y-intro">Check out the lesson on GitHub.</p>
     </footer>
