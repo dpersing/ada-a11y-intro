@@ -38,13 +38,13 @@
           <ul class="nav navbar-nav navbar-left">
             <li><a href="about.html">About</a></li>
             <li class="dropdown">
-              <a href="#" data-toggle="dropdown">Locations <b class="caret" aria-hidden="true"></b></a>
+              <a href="#" data-toggle="dropdown">Locations <span class="caret" aria-hidden="true"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Honolulu</a></li>
                 <li><a href="#">Kahului</a></li>
                 <li><a href="#">Kailua-Kona</a></li>
                 <li class="divider" aria-hidden="true"></li>
-                <li><a href="">Cabo San Lucas</a></li>
+                <li><a href="#">Cabo San Lucas</a></li>
                 <li><a href="#">Puerto Vallarta</a></li>
               </ul>
             </li>
@@ -58,7 +58,7 @@
           </div>
 
           <button type="submit" class="btn btn-default">
-            <b class="glyphicon glyphicon-search"></b>
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
             <span class="sr-only">Submit</span>
           </button>
         </form>
@@ -75,6 +75,7 @@
 
       <section class="row">
         <div class="col-sm-4">
+          <h2 class="sr-only">Features</h2>
           <div class="thumbnail">
             <img src="http://placekitten.com/600/400" class="img-responsive img-rounded" alt="Photo: a comfortable, modern beach house">
             <div class="caption">
@@ -112,10 +113,11 @@
         <section class="col-sm-6">
           <div class="panel panel-success">
             <div class="panel-heading">
-              <h2 class="panel-title" id="rates"><b class="glyphicon glyphicon-home" aria-hidden="true"></b> Rates</h2>
+              <h2 class="panel-title" id="rates"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Rates</h2>
             </div>
             <div class="panel-body">
               <table aria-labelledby="rates" class="table table-striped">
+                <caption class="sr-only">Nightly and weekly rates for adults and children</caption>
                 <thead>
                   <tr>
                     <th scope="col">Guest Type</th>
@@ -141,7 +143,7 @@
 
           <aside class="panel panel-info" role="complementary">
             <div class="panel-heading">
-              <h2 class="panel-title"><b class="glyphicon glyphicon-heart" aria-hidden="true"></b> About Our Cats</h2>
+              <h2 class="panel-title"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> About Our Cats</h2>
             </div>
             <div class="panel-body">
               <p>We're proud to host many breeds of cats (and other animals!):</p>
@@ -165,7 +167,7 @@
         <section id="booking" class="col-sm-6">
           <div class="panel panel-primary">
             <div class="panel-heading">
-              <h2 class="panel-title"><b class="glyphicon glyphicon-calendar" aria-hidden="true"></b> Book a Stay</h2>
+              <h2 class="panel-title"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Book a Stay</h2>
             </div>
 
             <div class="panel-body">
@@ -176,11 +178,16 @@
                   <div class="form-group">
                     <label for="location">Location</label>
                     <select id="location" name="location" class="form-control">
-                      <option value="cabo">Cabo San Lucas</option>
-                      <option value="honolulu">Honolulu</option>
-                      <option value="kahului">Kahului</option>
-                      <option value="kailua-kona">Kailua-Kona</option>
-                      <option value="puerto">Puerto Vallarta</option>
+                      <optgroup label="Hawaii">
+                        <option value="honolulu">Honolulu</option>
+                        <option value="kahului">Kahului</option>
+                        <option value="kailua-kona">Kailua-Kona</option>
+                      </optgroup>
+                        <optgroup label="Mexico">
+                        <option value="cabo">Cabo San Lucas</option>
+                        <option value="puerto">Puerto Vallarta</option>
+                      </optgroup>
+                      
                     </select>
                   </div>
 
