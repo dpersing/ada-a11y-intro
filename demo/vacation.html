@@ -14,6 +14,31 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+
+    <style>
+      /* overrides to Bootstrap defaults to help accessibility */
+      .navbar-default .navbar-brand { color: #727272; }
+      .navbar-default .navbar-toggle .icon-bar { background-color: #727272; }
+      .navbar-collapse .navbar-nav.navbar-left:first-child { margin-left: 0; }
+      .navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav>.dropdown>a .caret { color: #2d76b5; }
+      .navbar-default .navbar-nav>.dropdown>a .caret { border-top-color: #2d76b5; border-bottom-color: #2d76b5; }
+      .navbar-default .navbar-nav>li>a:hover,
+      .navbar-default .navbar-nav>li>a:focus,
+      .dropdown-menu>li>a:hover,
+      .dropdown-menu>li>a:focus,
+      .navbar-default .navbar-nav>.open>a,
+      .navbar-default .navbar-nav>.open>a:hover,
+      .navbar-default .navbar-nav>.open>a:focus { background: #2d76b5; color: #fff; }
+      .navbar-default .navbar-nav>.dropdown>a:hover .caret,
+      .navbar-default .navbar-nav>.open>a:hover .caret,
+      .navbar-default .navbar-nav>.dropdown>a:focus .caret,
+      .navbar-default .navbar-nav>.open>a:focus .caret { color: #fff; border-top-color: #fff; border-bottom-color: #fff; }
+      .panel-success>.panel-heading { color: #063; }
+      .btn-primary { background: #317ab9; }
+      .panel-primary>.panel-heading { background: #317ab9; border-color: #317ab9;; }
+      .btn-success { background: #2c882c; }
+      a { color: #2b74b3; }
+    </style>
   </head>
   <body class="container">
 
@@ -34,13 +59,13 @@
           <ul class="nav navbar-nav navbar-left">
             <li><a href="about.html">About</a></li>
             <li class="dropdown">
-              <a href="#" data-toggle="dropdown">Locations <b class="caret" aria-hidden="true"></b></a>
+              <a href="#" data-toggle="dropdown">Locations <span class="caret" aria-hidden="true"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Honolulu</a></li>
                 <li><a href="#">Kahului</a></li>
                 <li><a href="#">Kailua-Kona</a></li>
                 <li class="divider" aria-hidden="true"></li>
-                <li><a href="">Cabo San Lucas</a></li>
+                <li><a href="#">Cabo San Lucas</a></li>
                 <li><a href="#">Puerto Vallarta</a></li>
               </ul>
             </li>
@@ -54,7 +79,7 @@
           </div>
 
           <button type="submit" class="btn btn-default">
-            <b class="glyphicon glyphicon-search"></b>
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
             <span class="sr-only">Submit</span>
           </button>
         </form>
@@ -66,192 +91,226 @@
       <section class="jumbotron">
         <h1>Welcome to Cats on the Beach</h1>
         <p>Cats on the Beach is your destination for enjoying a beach-side vacation&mdash;with cats!</p>
+        <span class="sr-only">Photo: a cat wearing pink sunglasses, sitting on a brightly colored beach chair.</span>
+        <!-- photo: http://pets.lohudblogs.com/2009/03/28/youre-weekends-just-begun-and-my-vacation-is-ending/ -->
         <a href="#booking" class="btn btn-primary btn-lg">Book now</a>
       </section>
 
       <section class="row">
         <div class="col-sm-4">
-          <img src="http://placekitten.com/600/400" class="img-responsive img-rounded" alt="Photo: a comfortable, modern beach house">
-          <h3>Cozy Cottages</h3>
-          <p>Our guests stay in comfortable, modern cottages overlooking the sea. Each cottage is within easy walking distance to our taco trucks, ice cream stands, bars, restaurants, and petting zoos.</p>
-          <a href="#" class="btn btn-info">Learn more<span class="sr-only"> about our amenities</span></a>
+          <h2 class="sr-only">Features</h2>
+          <div class="thumbnail">
+            <img src="img/cottages.jpg" class="img-responsive img-rounded" alt="Photo: wooden cottages surrounded by palm trees.">
+            <!-- photo: http://www.flickr.com/photos/diaz/19117899/ -->
+            <div class="caption">
+              <h3>Cozy Cottages</h3>
+              <p>Our guests stay in comfortable, modern cottages overlooking the sea. Each cottage is within easy walking distance to our taco trucks, ice cream stands, bars, restaurants, and petting zoos.</p>
+              <a href="#" class="btn btn-default">Learn more<span class="sr-only"> about our amenities</span></a>
+            </div>
+          </div>
         </div>
 
         <div class="col-sm-4">
-          <img src="http://placekitten.com/600/400" class="img-responsive img-rounded" alt="Photo: a beautiful beach with happy vacationers">
-          <h3>Beautiful Scenery</h3>
-          <p>Enjoy breathtaking views, hiking, swimming, and more at our scenic locations. Don't forget to make use our complementary life jackets for adults, children, and critters if you go boating!</p>
-          <a href="#" class="btn btn-info">Learn more<span class="sr-only"> about our locations</span></a>
+          <div class="thumbnail">
+            <img src="img/cat-beach.jpg" class="img-responsive img-rounded" alt="Photo: a cat wearing pink sunglasses and a lei sitting on a brightly colored beach chair on a sandy beach.">
+            <div class="caption">
+              <h3>Adorable Cats</h3>
+              <p>Each of our cottages comes fully stocked with all the amenties your feline companions will need. Let us choose a variety of cats for your stay, or make a request!</p>
+              <a href="#" class="btn btn-default">Learn more<span class="sr-only"> about our cats</span></a>
+            </div>
+          </div>
         </div>
 
         <div class="col-sm-4">
-          <img src="http://placekitten.com/600/400" class="img-responsive img-rounded" alt="Photo: a brown and gold striped tabby kitten">
-          <h3>Adorable Cats</h3>
-          <p>Each of our cottages comes fully stocked with all the amenties your feline companions will need. Let us choose a variety of cats for your stay, or let us know your favorite breeds and personalities.</p>
-          <a href="#" class="btn btn-info">Learn more<span class="sr-only"> about our cats</span></a>
+          <div class="thumbnail">
+            <img src="img/swimming.jpg" class="img-responsive img-rounded" alt="Photo: beautiful clear ocean water, with children and adults swimming with rafts.">
+            <!-- photo: http://www.flickr.com/photos/usoceangov/5817704307/ -->
+            <div class="caption">
+              <h3>Beautiful Scenery</h3>
+              <p>Enjoy breathtaking views, hiking, swimming, and more at our scenic locations. Don't forget to make use our complementary life jackets for adults, children, and critters if you go boating!</p>
+              <a href="#" class="btn btn-default">Learn more<span class="sr-only"> about our locations</span></a>
+            </div>
+          </div>
         </div>
       </section>
 
       <div class="row">
         <section class="col-sm-6">
-          <h2 id="rates"><b class="glyphicon glyphicon-home" aria-hidden="true"></b> Rates</h2>
-          <table aria-labelledby="rates" class="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">Guest Type</th>
-                <th scope="col">Per Night</th>
-                <th scope="col">Per Week</th>
-              </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <th scope="row">Adults</th>
-              <td>$60</td>
-              <td>$380</td>
-            </tr>
-            <tr>
-              <th scope="row">Children</th>
-              <td>$40</td>
-              <td>$220</td>
-            </tr>
-            </tbody>
-          </table>
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h2 class="panel-title" id="rates"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Rates</h2>
+            </div>
+            <div class="panel-body">
+              <table aria-labelledby="rates" class="table table-striped">
+                <caption class="sr-only">Nightly and weekly rates for adults and children</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Guest Type</th>
+                    <th scope="col">Per Night</th>
+                    <th scope="col">Per Week</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <th scope="row">Adults</th>
+                  <td>$60</td>
+                  <td>$380</td>
+                </tr>
+                <tr>
+                  <th scope="row">Children</th>
+                  <td>$40</td>
+                  <td>$220</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
 
-          <aside role="complementary">
-            <h2><b class="glyphicon glyphicon-heart" aria-hidden="true"></b> About Our Cats</h2>
-            <p>We're proud to host many breeds of cats (and other animals!):</p>
-            <ul>
-              <li>Maine Coon</li>
-              <li>Ragdoll</li>
-              <li>Scottish Fold</li>
-              <li>Siamese</li>
-              <li>Tabbies</li>
-              <li>That kind that looks like Wilfred Brimley</li>
-              <li>And many more!</li>
-            </ul>
+          <aside class="panel panel-default" role="complementary">
+            <div class="panel-heading">
+              <h2 class="panel-title"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> About Our Cats</h2>
+            </div>
+            <div class="panel-body">
+              <p>We're proud to host many breeds of cats (and other animals!):</p>
+              <ul>
+                <li>Maine Coon</li>
+                <li>Ragdoll</li>
+                <li>Scottish Fold</li>
+                <li>Siamese</li>
+                <li>Tabbies</li>
+                <li>Cats with cow spots</li>
+                <li>Cats with mustaches</li>
+                <li>That kind that looks like Wilfred Brimley</li>
+                <li>And many more!</li>
+              </ul>
+
+              <img src="http://placekitten.com/600/500" class="img-responsive img-rounded" alt="Photo: a very fuzzy, surprised-looking kitten">
+            </div>
           </aside>
-
-          <img src="http://placekitten.com/600/600" class="img-responsive img-rounded" alt="Photo: a very fuzzy, surprised-looking kitten">
         </section>
 
         <section id="booking" class="col-sm-6">
-          <h2><b class="glyphicon glyphicon-calendar" aria-hidden="true"></b> Book a Stay</h2>
-
-          <form role="form">
-            <fieldset>
-              <legend>Accomodations</legend>
-
-              <div class="form-group">
-                <label for="location">Location</label>
-                <select id="location" name="location" class="form-control">
-                  <option value="cabo">Cabo San Lucas</option>
-                  <option value="honolulu">Honolulu</option>
-                  <option value="kahului">Kahului</option>
-                  <option value="kailua-kona">Kailua-Kona</option>
-                  <option value="puerto">Puerto Vallarta</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="start-date">Arrival Date</label>
-                <input type="text" id="start-date" class="form-control" placeholder="mm/dd/yyyy">
-              </div>
-
-              <div class="form-group">
-                <label for="departure-date">Departure Date</label>
-                <input type="text" id="departure-date" class="form-control" placeholder="mm/dd/yyyy">
-              </div>
-
-              <div class="form-group">
-                <label for="adults">Adults</label>
-                <input type="number" id="adults" class="form-control" placeholder="0">
-              </div>
-
-              <div class="form-group">
-                <label for="children">Children</label>
-                <input type="number" id="children" class="form-control" placeholder="0">
-              </div>
-            </fieldset>
-
-            <div class="row">
-              <fieldset class="col-sm-6">
-                <legend>Cat Preference</legend>
-                <div class="radio">
-                  <label for="prefer-cats">
-                    <input type="radio" id="prefer-cats" name="preference" value="prefer-cats">
-                    Adult Cats
-                  </label>
-                </div>
-                <div class="radio">
-                  <label for="prefer-kittens">
-                    <input type="radio" id="prefer-kittens" name="preference" value="prefer-kittens">
-                    Kittens
-                  </label>
-                </div>
-                <div class="radio">
-                  <label for="prefer-none">
-                    <input type="radio" id="prefer-none" name="preference" value="prefer-none">
-                    No Preference
-                  </label>
-                </div>
-              </fieldset>
-
-              <fieldset class="col-sm-6">
-                <legend>Additional Animals</legend>
-                <div class="checkbox">
-                  <label for="extra-dogs">
-                    <input type="checkbox" id="extra-dogs" name="extras" value="extra-dogs">
-                    Yes! I also like dogs.
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label for="extra-sloths">
-                    <input type="checkbox" id="extra-sloths" name="extras" value="extra-sloths">
-                    Yes! I also like sloths.
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label for="extra-llamas">
-                    <input type="checkbox" id="extra-llamas" name="extras" value="extra-sloths">
-                    Yes! I also like llamas.
-                  </label>
-                </div>
-              </fieldset>
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h2 class="panel-title"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Book a Stay</h2>
             </div>
 
-            <div class="form-group">
-                <label for="requests">Specific Animal Requests</label>
-                <textarea id="requests" class="form-control"></textarea>
+            <div class="panel-body">
+              <form role="form">
+                <fieldset>
+                  <legend>Accomodations</legend>
+
+                  <div class="form-group">
+                    <label for="location">Location</label>
+                    <select id="location" name="location" class="form-control">
+                      <optgroup label="Hawaii">
+                        <option value="honolulu" selected>Honolulu</option>
+                        <option value="kahului">Kahului</option>
+                        <option value="kailua-kona">Kailua-Kona</option>
+                      </optgroup>
+                        <optgroup label="Mexico">
+                        <option value="cabo">Cabo San Lucas</option>
+                        <option value="puerto">Puerto Vallarta</option>
+                      </optgroup>
+                      
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="start-date">Arrival Date<span class="sr-only"> in mm/dd/yyyy format</span></label>
+                    <input type="text" id="start-date" class="form-control" placeholder="mm/dd/yyyy">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="departure-date">Departure Date<span class="sr-only"> in mm/dd/yyyy format</span></label>
+                    <input type="text" id="departure-date" class="form-control" placeholder="mm/dd/yyyy">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="adults">Adults</label>
+                    <input type="number" id="adults" class="form-control" placeholder="0">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="children">Children</label>
+                    <input type="number" id="children" class="form-control" placeholder="0">
+                  </div>
+                </fieldset>
+
+                <div class="row">
+                  <fieldset class="col-sm-6">
+                    <legend>Cat Preference</legend>
+                    <div class="radio">
+                      <input type="radio" id="prefer-cats" name="preference" value="prefer-cats">
+                      <label for="prefer-cats">Adult cats</label>
+                    </div>
+                    <div class="radio">
+                      <input type="radio" id="prefer-kittens" name="preference" value="prefer-kittens">
+                      <label for="prefer-kittens">Kittens</label>
+                    </div>
+                    <div class="radio">
+                      <input type="radio" id="prefer-none" name="preference" value="prefer-none">
+                      <label for="prefer-none">No preference</label>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="col-sm-6">
+                    <legend>Additional Animals</legend>
+                    <div class="checkbox">
+                      <input type="checkbox" id="extra-dogs" name="extras" value="extra-dogs">
+                      <label for="extra-dogs">Yes! I also like <strong>dogs</strong>.</label>
+                    </div>
+                    <div class="checkbox">
+                      <input type="checkbox" id="extra-sloths" name="extras" value="extra-sloths">
+                      <label for="extra-sloths">Yes! I also like <strong>sloths</strong>.</label>
+                    </div>
+                    <div class="checkbox">
+                      <input type="checkbox" id="extra-llamas" name="extras" value="extra-sloths">
+                      <label for="extra-llamas">Yes! I also like <strong>llamas</strong>.</label>
+                    </div>
+
+                    <div class="checkbox">
+                      <input type="checkbox" id="extra-owls" name="extras" value="extra-owls">
+                      <label for="extra-owls">Yes! I also like <strong>owls</strong>.</label>
+                    </div>
+                  </fieldset>
+                </div>
+
+                <div class="form-group">
+                    <label for="requests">Specific Animal Requests</label>
+                    <textarea id="requests" class="form-control"></textarea>
+                </div>
+
+                <fieldset>
+                  <legend>Your Information</legend>
+
+                  <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" class="form-control">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control" placeholder="example@adadevelopersacademy.org">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" class="form-control" placeholder="555-555-5555">
+                  </div>
+                </fieldset>
+
+                <button type="submit" class="btn btn-lg btn-success">Submit</button>
+              </form>
             </div>
-
-            <fieldset>
-              <legend>Your Information</legend>
-
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" class="form-control">
-              </div>
-
-              <div class="form-group">
-                <label for="telephone">Email</label>
-                <input type="email" id="email" class="form-control" placeholder="example@adadevelopersacademy.org">
-              </div>
-
-              <div class="form-group">
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" class="form-control" placeholder="555-555-555">
-              </div>
-            </fieldset>
-
-            <button type="submit" class="btn btn-lg btn-success">Submit</button>
-          </form>
+          </div>
         </section>
       </div>
     </main>
     <footer class="col-sm-12 well" role="contentinfo">
       <p>This site was built using <a href="http://getbootstrap.com/">Twitter Bootstrap</a> (v3) and <a href="http://glyphicons.com/">Glyphicons</a> to demonstrate introductory accessibility principles to students at <a href="http://adadevelopersacademy.org/">Ada Developers Academy</a>.</p>
 
-      <p><a href="https://github.com/dpersing/ada-a11y-intro">Check out the lesson on GitHub.</p>
+      <p><a href="https://github.com/dpersing/ada-a11y-intro">Check out the lesson on GitHub</a>.</p>
     </footer>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
