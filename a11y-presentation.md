@@ -354,6 +354,7 @@ Javascript can be used in conjunction with WAI-ARIA attributes to create a rich,
 ### Tools
 
 * [Accessibility Developer Tools](https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en) extension for Chrome
+* [HTML_Codesniffer](http://squizlabs.github.io/HTML_CodeSniffer/) browser bookmarklet and in-browser audit tool
 * Lou Verou's [Contrast Ratio](http://leaverou.github.io/contrast-ratio/) tool
 * [VoiceOver on OSX Commands and Gestures](http://www.apple.com/voiceover/info/guide/_1131.html)
 * [VoiceOver on iOS Gestures](http://lab.dotjay.co.uk/notes/voiceover-ios/learning-ios-voiceover-gestures/)
