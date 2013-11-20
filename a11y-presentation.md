@@ -8,7 +8,11 @@ Web accessibility means making online content usable (and enjoyable!) for people
 
 ## Why Be Accessible Online?
 
-* The web is an equalizing force in people's ability to get things done on a daily basis
+* The web is an equalizing force in people's ability to get things done on a daily basis:
+	* Paying bills
+	* Buying essentials
+	* Signing up for services
+	* Communicating
 * Accessible websites typically are search engine-friendly websites
 * Accessible websites typically work well on mobile and tablet devices
 * It's easier than it sounds!
@@ -17,7 +21,7 @@ Web accessibility means making online content usable (and enjoyable!) for people
 
 * **Vision** (blindness, low vision, color blindness)
 * **Hearing** (deafness)
-* **Motor skills** (inability to use a mouse)
+* **Motor skills** (trouble using a mouse)
 * **Cognitive and learning issues** (autism, dyslexia, ADD, etc.)
 
 ## Devices and Supports
