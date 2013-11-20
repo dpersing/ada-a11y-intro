@@ -16,7 +16,28 @@
     <![endif]-->
 
     <style>
-      .jumbotron { background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 20%,rgba(0,0,0,0.8) 100%), url('img/banner-image.jpg') -1px -320px no-repeat; color: #fff;}
+      /* overrides to Bootstrap defaults to help accessibility */
+      .navbar-default .navbar-brand { color: #727272; }
+      .navbar-default .navbar-toggle .icon-bar { background-color: #727272; }
+      .navbar-collapse .navbar-nav.navbar-left:first-child { margin-left: 0; }
+      .navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav>.dropdown>a .caret { color: #2d76b5; }
+      .navbar-default .navbar-nav>.dropdown>a .caret { border-top-color: #2d76b5; border-bottom-color: #2d76b5; }
+      .navbar-default .navbar-nav>li>a:hover,
+      .navbar-default .navbar-nav>li>a:focus,
+      .dropdown-menu>li>a:hover,
+      .dropdown-menu>li>a:focus,
+      .navbar-default .navbar-nav>.open>a,
+      .navbar-default .navbar-nav>.open>a:hover,
+      .navbar-default .navbar-nav>.open>a:focus { background: #2d76b5; color: #fff; }
+      .navbar-default .navbar-nav>.dropdown>a:hover .caret,
+      .navbar-default .navbar-nav>.open>a:hover .caret,
+      .navbar-default .navbar-nav>.dropdown>a:focus .caret,
+      .navbar-default .navbar-nav>.open>a:focus .caret { color: #fff; border-top-color: #fff; border-bottom-color: #fff; }
+      .panel-success>.panel-heading { color: #063; }
+      .btn-primary { background: #317ab9; }
+      .panel-primary>.panel-heading { background: #317ab9; border-color: #317ab9;; }
+      .btn-success { background: #2c882c; }
+      a { color: #2b74b3; }
     </style>
   </head>
   <body class="container">
@@ -70,6 +91,8 @@
       <section class="jumbotron">
         <h1>Welcome to Cats on the Beach</h1>
         <p>Cats on the Beach is your destination for enjoying a beach-side vacation&mdash;with cats!</p>
+        <span class="sr-only">Photo: a cat wearing pink sunglasses, sitting on a brightly colored beach chair.</span>
+        <!-- photo: http://pets.lohudblogs.com/2009/03/28/youre-weekends-just-begun-and-my-vacation-is-ending/ -->
         <a href="#booking" class="btn btn-primary btn-lg">Book now</a>
       </section>
 
@@ -77,33 +100,35 @@
         <div class="col-sm-4">
           <h2 class="sr-only">Features</h2>
           <div class="thumbnail">
-            <img src="http://placekitten.com/600/400" class="img-responsive img-rounded" alt="Photo: a comfortable, modern beach house">
+            <img src="img/cottages.jpg" class="img-responsive img-rounded" alt="Photo: wooden cottages surrounded by palm trees.">
+            <!-- photo: http://www.flickr.com/photos/diaz/19117899/ -->
             <div class="caption">
               <h3>Cozy Cottages</h3>
               <p>Our guests stay in comfortable, modern cottages overlooking the sea. Each cottage is within easy walking distance to our taco trucks, ice cream stands, bars, restaurants, and petting zoos.</p>
-              <a href="#" class="btn btn-info">Learn more<span class="sr-only"> about our amenities</span></a>
+              <a href="#" class="btn btn-default">Learn more<span class="sr-only"> about our amenities</span></a>
             </div>
           </div>
         </div>
 
         <div class="col-sm-4">
           <div class="thumbnail">
-            <img src="http://placekitten.com/600/400" class="img-responsive img-rounded" alt="Photo: a beautiful beach with happy vacationers">
+            <img src="img/cat-beach.jpg" class="img-responsive img-rounded" alt="Photo: a cat wearing pink sunglasses and a lei sitting on a brightly colored beach chair on a sandy beach.">
+            <div class="caption">
+              <h3>Adorable Cats</h3>
+              <p>Each of our cottages comes fully stocked with all the amenties your feline companions will need. Let us choose a variety of cats for your stay, or make a request!</p>
+              <a href="#" class="btn btn-default">Learn more<span class="sr-only"> about our cats</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="thumbnail">
+            <img src="img/swimming.jpg" class="img-responsive img-rounded" alt="Photo: beautiful clear ocean water, with children and adults swimming with rafts.">
+            <!-- photo: http://www.flickr.com/photos/usoceangov/5817704307/ -->
             <div class="caption">
               <h3>Beautiful Scenery</h3>
               <p>Enjoy breathtaking views, hiking, swimming, and more at our scenic locations. Don't forget to make use our complementary life jackets for adults, children, and critters if you go boating!</p>
-              <a href="#" class="btn btn-info">Learn more<span class="sr-only"> about our locations</span></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-4">
-          <div class="thumbnail">
-            <img src="http://placekitten.com/600/400" class="img-responsive img-rounded" alt="Photo: a brown and gold striped tabby kitten">
-            <div class="caption">
-              <h3>Adorable Cats</h3>
-              <p>Each of our cottages comes fully stocked with all the amenties your feline companions will need. Let us choose a variety of cats for your stay, or let us know your favorite breeds and personalities.</p>
-              <a href="#" class="btn btn-info">Learn more<span class="sr-only"> about our cats</span></a>
+              <a href="#" class="btn btn-default">Learn more<span class="sr-only"> about our locations</span></a>
             </div>
           </div>
         </div>
@@ -141,7 +166,7 @@
             </div>
           </div>
 
-          <aside class="panel panel-info" role="complementary">
+          <aside class="panel panel-default" role="complementary">
             <div class="panel-heading">
               <h2 class="panel-title"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> About Our Cats</h2>
             </div>
@@ -179,7 +204,7 @@
                     <label for="location">Location</label>
                     <select id="location" name="location" class="form-control">
                       <optgroup label="Hawaii">
-                        <option value="honolulu">Honolulu</option>
+                        <option value="honolulu" selected>Honolulu</option>
                         <option value="kahului">Kahului</option>
                         <option value="kailua-kona">Kailua-Kona</option>
                       </optgroup>
@@ -192,12 +217,12 @@
                   </div>
 
                   <div class="form-group">
-                    <label for="start-date">Arrival Date</label>
+                    <label for="start-date">Arrival Date<span class="sr-only"> in mm/dd/yyyy format</span></label>
                     <input type="text" id="start-date" class="form-control" placeholder="mm/dd/yyyy">
                   </div>
 
                   <div class="form-group">
-                    <label for="departure-date">Departure Date</label>
+                    <label for="departure-date">Departure Date<span class="sr-only"> in mm/dd/yyyy format</span></label>
                     <input type="text" id="departure-date" class="form-control" placeholder="mm/dd/yyyy">
                   </div>
 
@@ -216,51 +241,37 @@
                   <fieldset class="col-sm-6">
                     <legend>Cat Preference</legend>
                     <div class="radio">
-                      <label for="prefer-cats">
-                        <input type="radio" id="prefer-cats" name="preference" value="prefer-cats">
-                        Adult cats
-                      </label>
+                      <input type="radio" id="prefer-cats" name="preference" value="prefer-cats">
+                      <label for="prefer-cats">Adult cats</label>
                     </div>
                     <div class="radio">
-                      <label for="prefer-kittens">
-                        <input type="radio" id="prefer-kittens" name="preference" value="prefer-kittens">
-                        Kittens
-                      </label>
+                      <input type="radio" id="prefer-kittens" name="preference" value="prefer-kittens">
+                      <label for="prefer-kittens">Kittens</label>
                     </div>
                     <div class="radio">
-                      <label for="prefer-none">
-                        <input type="radio" id="prefer-none" name="preference" value="prefer-none">
-                        No preference
-                      </label>
+                      <input type="radio" id="prefer-none" name="preference" value="prefer-none">
+                      <label for="prefer-none">No preference</label>
                     </div>
                   </fieldset>
 
                   <fieldset class="col-sm-6">
                     <legend>Additional Animals</legend>
                     <div class="checkbox">
-                      <label for="extra-dogs">
-                        <input type="checkbox" id="extra-dogs" name="extras" value="extra-dogs">
-                        Yes! I also like <strong>dogs</strong>.
-                      </label>
+                      <input type="checkbox" id="extra-dogs" name="extras" value="extra-dogs">
+                      <label for="extra-dogs">Yes! I also like <strong>dogs</strong>.</label>
                     </div>
                     <div class="checkbox">
-                      <label for="extra-sloths">
-                        <input type="checkbox" id="extra-sloths" name="extras" value="extra-sloths">
-                        Yes! I also like <strong>sloths</strong>.
-                      </label>
+                      <input type="checkbox" id="extra-sloths" name="extras" value="extra-sloths">
+                      <label for="extra-sloths">Yes! I also like <strong>sloths</strong>.</label>
                     </div>
                     <div class="checkbox">
-                      <label for="extra-llamas">
-                        <input type="checkbox" id="extra-llamas" name="extras" value="extra-sloths">
-                        Yes! I also like <strong>llamas</strong>.
-                      </label>
+                      <input type="checkbox" id="extra-llamas" name="extras" value="extra-sloths">
+                      <label for="extra-llamas">Yes! I also like <strong>llamas</strong>.</label>
                     </div>
 
                     <div class="checkbox">
-                      <label for="extra-owls">
-                        <input type="checkbox" id="extra-owls" name="extras" value="extra-owls">
-                        Yes! I also like <strong>owls</strong>.
-                      </label>
+                      <input type="checkbox" id="extra-owls" name="extras" value="extra-owls">
+                      <label for="extra-owls">Yes! I also like <strong>owls</strong>.</label>
                     </div>
                   </fieldset>
                 </div>
@@ -285,7 +296,7 @@
 
                   <div class="form-group">
                     <label for="phone">Phone</label>
-                    <input type="tel" id="phone" class="form-control" placeholder="555-555-555">
+                    <input type="tel" id="phone" class="form-control" placeholder="555-555-5555">
                   </div>
                 </fieldset>
 
