@@ -29,7 +29,7 @@ Web accessibility means making online content usable (and enjoyable!) for people
 
 ## Standards for Accessibility
 
-W3C's [Web Content Accessibility Guidelines](http://www.w3.org/TR/WCAG20/) provides principles and techniques for making web content:
+W3C's [Web Content Accessibility Guidelines](http://www.w3.org/TR/WCAG20/) (WCAG) provides principles and techniques for making web content:
 
 1. Perceivable
 1. Operable
@@ -44,6 +44,8 @@ In other words, can a user...
 1. use the content on the device of their choice and with the technology of their choice
 
 ... in a way that works for them?
+
+WCAG is currently in its second version, so it's often called WCAG 2.0. WCAG also has three levels of compliance, from least strict (Level A) to most strict (Level AAA). **Most commonly we target Level AA**.
 
 ## How to Make Accessible Content
 
@@ -94,7 +96,7 @@ Today we'll be testing with VoiceOver on your Mac. To use VoiceOver:
 
 Or, just press Command (&#8984;) + F5 to toggle VoiceOver on or off.
 
-![OSX System Preferences screen, with the Accessibility menu item circled in pink](img/system-a11y-osx.png)
+![OSX System Preferences screen, with the Accessibility menu item circled in pink](http://dpersing.github.io/ada-a11y-intro/demo/img/system-a11y-osx.png)
 
 ## Some Examples
 
@@ -110,7 +112,9 @@ Paragraphs (`<p>`), lists (`<ol>` and `<ul>`), and other types of elements creat
 
 ```
 <h1>Every page should have an h1!</h1>
+
 <h2>Smaller sections should have h2s</h2>
+
 <h3>And then h3s, if appropriate, etc.</h3>
 
 <p>Blocks of text should usually be paragraphs.</p>
@@ -234,44 +238,117 @@ By default, all browsers show keyboard focus on interactive elements with the `o
 
 You can replace this default functionality, or also add to it by changing background colors, adding underlines, etc., with CSS.
 
-	* keyboard focus example
+#### Screen-reader-only CSS
 
-## Putting It All Together
+Sometimes you'll want to add extra text for screen readers. This might be because information is conveyed visually with icons, or colors, or other design elements.
 
-Let's run our tests [while we shop for a vacation!](http://dpersing.github.io/ada-a11y-intro/demo/index.html).
+This can be done with some CSS that we can apply with a class on any element:
 
-## More Advanced Stuff
+```
+.visuallyhidden { 
+  position: absolute; 
+  overflow: hidden; 
+  clip: rect(0 0 0 0); 
+  height: 1px; width: 1px; 
+  margin: -1px; padding: 0; border: 0; 
+}
+```
 
 ### WAI-ARIA
 
-(WAI-ARIA) is designed to enhance already well-formed HTML for even greater accessibility.
+[Web Accessibility Initiative Accessible Rich Internet Applications](http://www.w3.org/TR/wai-aria/) (WAI-ARIA) are designed to enhance already well-formed HTML for even greater accessibility.
 
-	* ARIA code sample and example
+WAI-ARIA consists of different types of attributes used to convey more information about elements and relationships between elements to screen readers. Newer screen readers can identify these values and use them when they're announcing content to users.
 
-### Screen-Reader-Only Text
+Here are some examples!
 
-Information designed for screen readers specifically can be hidden from sighted users.
+* `role` indicates the element's role on the page. In this case, we have a navigation group, which most newer screen readers will be able to identify.
+* `aria-labelledby` will help tie a clear relationship between, say, shorts and their bottoms category.
 
-	* ARIA code sample and example
+```
+<nav role="navigation">
+	<ul>
+		<li><a href="#" id="nav-tops">Tops</a>
+			<ul aria-labelledby="nav-tops">
+				<li><a href="tops/t-shirts.html">T-Shirts</a></li>
+				<li><a href="tops/tanks.html">Tanks</a></li>
+				<li><a href="tops/button-ups.html">Button-Ups</a></li>
+			</ul>
+		</li>
+		<li><a href="#" id="nav-bottoms">Bottoms</a>
+			<ul aria-labelledby="nav-bottoms">
+				<li><a href="bottoms/jeans.html">Jeans</a></li>
+				<li><a href="bottoms/skirts.html">Skirts</a></li>
+				<li><a href="bottoms/shorts.html">Shorts</a></li>
+			</ul>
+		</li>
+	</ul>
+</nav>
 
-Why not just use `display: none;`?
+```
 
-### Accessible Dynamic Content
+There's a whole set of `role` attributes called Landmark Roles that can be applied to different areas of the page. These form a kind of outline of the types of content that appear on the page and help screen reader users "skim" the page.
+
+```
+<header>
+	<img src="site-logo.png" role="banner" alt="Site Name">
+	<!-- The banner role correlates to a site's logo or name. -->
+	<nav role="navigation">
+		<!-- Here's where the site global nav might live. -->
+	</nav>
+	<form role="search">
+		<!-- Here's where the site search might live. -->
+	</form>
+</header>>
+<main role="main">
+	<!-- The main content of the page would be the main column of text, for example. --> 
+</main>
+<aside role="complementary">
+	<!-- Here's supportive information, like "about" blurbs, or other products, etc. -->
+</aside>
+<footer role="contentinfo">
+	<!-- Meta-information that describes the content, like copyright dates, might live here. -->
+</footer>
+```
+
+**Fun fact:** If you're noticing similarities between WAI-ARIA roles and HTML5 container elements, that's no accident. WAI-ARIA precedes HTML5, but has similar goals for creating semantic containers and labels for content.
+
+## Putting It All Together
+
+Good news, everyone! We've won a fabulous vacation. [Let's run our tests while we learn about the trip!](http://dpersing.github.io/ada-a11y-intro/demo/vacation.html)
+
+## More Advanced Stuff
+
+### WAI-ARIA Widget Roles
+
+What if you want more options for controls and dynamic content on the page? WAI-ARIA Widget Roles provide some enhancements like:
+
+* `alert` roles for important content that should get announced ASAP.
+* `progressbar` roles for showing progress load.
+* `tab` roles can be easily styled like links or buttons but function like radio buttons.
+* `tooltip` roles can provide extra info when a user hovers or clicks on a link or button.
+
+### Combining WAI-ARIA Roles and Javascript
 
 If a user does something that dynamically loads content on the current page, it's helpful to **change context and move keyboard focus** to that new content so that screen reader and keyboard users can have a smoothly flowing experience.
 
-Javascript can be used in conjunction with WAI-ARIA attributes to create a rich, informative experience for screen reader users by dynamically adding and removing different attributes or attribute values as interactions occur.
+Javascript can be used in conjunction with WAI-ARIA attributes to create a rich, informative experience for screen reader users by dynamically adding and removing different attributes or attribute values as interactions occur and new content loads on the page.
 
 ## Resources
+
+### Guidelines and Specs
+
+* [WAI-ARIA](http://www.w3.org/TR/wai-aria/)
+* [Web Content Accessibility Guidelines (WCAG) 2.0](http://www.w3.org/TR/WCAG20/)
 
 ### Techniques
 
 * [WebAIM](http://webaim.org/) has how-tos, news, and lots of resources related to a11y
 * [Web Axe](http://www.webaxe.org/) is a blog and podcast about accessiblity issues
+* [Places It's Tempting to Use Display: None; But Don't](http://css-tricks.com/places-its-tempting-to-use-display-none-but-dont/) gives a nice rundown of using CSS to hide content visually-only.
 
 ### Tools
 
-* [Web Content Accessibility Guidelines (WCAG) 2.0](http://www.w3.org/TR/WCAG20/)
 * [Accessibility Developer Tools](https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en) extension for Chrome
 * Lou Verou's [Contrast Ratio](http://leaverou.github.io/contrast-ratio/) tool
 * [VoiceOver on OSX Commands and Gestures](http://www.apple.com/voiceover/info/guide/_1131.html)
@@ -285,6 +362,7 @@ Javascript can be used in conjunction with WAI-ARIA attributes to create a rich,
 
 1. Test your current Sinatra projects for accessibility using VoiceOver and Chrome Accessibility Developer Tools. If it helps, close your eyes! (Also potentially be kind to your neighbors by wearing headphones.)
 1. Update your CSS with any color contrast changes. You can use the Contrast Ratio tool to try out different contrasts.
-1. Update your HTML with any element or attribute changes or updates.
+1. Update your HTML with WAI-ARIA Landmark Roles when they are applicable.
+1. Update any other HTML elemnents or attributes that aren't valid or don't read as you expect them to.
 1. Rerun your tests.
 1. Have a partner test your project with VoiceOver.
