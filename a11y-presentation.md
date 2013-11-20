@@ -291,7 +291,7 @@ Here are some examples!
 
 ```
 
-There's a whole set of `role` attributes called Landmark Roles that can be applied to different areas of the page. These form a kind of outline of the types of content that appear on the page and help screen reader users "skim" the page.
+There's are whole sets of `role` attributes called Landmark Roles and Document Structure Roles that can be applied to different areas of the page. These form a kind of outline of the types of content that appear on the page and help screen reader users "skim" the page.
 
 ```
 <header>
