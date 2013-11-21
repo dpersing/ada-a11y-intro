@@ -72,7 +72,7 @@ The first step for automated testing is validating your HTML.
 
 #### WCAG audit
 
-The second step is running an automated test against WCAG 2.0 principles. These tests will sometimes find false positives for issues, but are a great way to get accustomed to WCAG and techniques for fixing a11y issues issues.
+The second step is running an automated test against WCAG 2.0 principles. These tests will sometimes find false positives for issues, but are a great way to get accustomed to WCAG and techniques for identifying and fixing a11y issues.
 
 * [Chrome Accessibility Developer Tools](https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en) is an add-on for Chrome that adds an accessibility audit to the existing Web Inspector tools.
 * [HTML_Codesniffer](http://squizlabs.github.io/HTML_CodeSniffer/) is an in-browser tool and bookmarklet for any browser that checks your code against WCAG 2.0.
@@ -368,6 +368,6 @@ Javascript can be used in conjunction with WAI-ARIA attributes to create a rich,
 1. Test your current Sinatra projects for accessibility using VoiceOver and Chrome Accessibility Developer Tools. If it helps, close your eyes! (Also potentially be kind to your neighbors by wearing headphones.)
 1. Update your CSS with any color contrast changes. You can use the Contrast Ratio tool to try out different contrasts.
 1. Update your HTML with WAI-ARIA Landmark Roles when they are applicable.
-1. Update any other HTML elemnents or attributes that aren't valid or don't read as you expect them to.
+1. Update any other HTML elements or attributes that aren't valid or don't read as you expect them to.
 1. Rerun your tests.
 1. Have a partner test your project with VoiceOver.
