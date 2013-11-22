@@ -32,13 +32,13 @@ Web accessibility means making online content usable (and enjoyable!) for people
 	* 11% of children 4-17 years of age, and about 4% of adults, in the US have been diagnosed with ADD.
 
 References:
-[Statistical Facts about Blindness in the United States (2011)](https://nfb.org/factsaboutblindnessintheus)
-[Color blindness - PubMed Health](http://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0001997/)
-[Quick Statistics - National Institute on Deafness and Other Communication Disorders](http://www.nidcd.nih.gov/health/statistics/Pages/quick.aspx)
-[Autism Spectrum Disorders - CDC](http://www.cdc.gov/ncbddd/autism/data.html)
-[Debunking the Myths about Dyslexia - University of Michigan](http://dyslexiahelp.umich.edu/dyslexics/learn-about-dyslexia/what-is-dyslexia/debunking-common-myths-about-dyslexia)
-[ADHD - CDC](http://www.cdc.gov/ncbddd/adhd/data.html)
-[ADHD in Adults - PubMed](http://www.webmd.com/add-adhd/guide/adhd-adults)
+* [Statistical Facts about Blindness in the United States (2011)](https://nfb.org/factsaboutblindnessintheus)
+* [Color blindness - PubMed Health](http://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0001997/)
+* [Quick Statistics - National Institute on Deafness and Other Communication Disorders](http://www.nidcd.nih.gov/health/statistics/Pages/quick.aspx)
+* [Autism Spectrum Disorders - CDC](http://www.cdc.gov/ncbddd/autism/data.html)
+* [Debunking the Myths about Dyslexia - University of Michigan](http://dyslexiahelp.umich.edu/dyslexics/learn-about-dyslexia/what-is-dyslexia/debunking-common-myths-about-dyslexia)
+* [ADHD - CDC](http://www.cdc.gov/ncbddd/adhd/data.html)
+* [ADHD in Adults - PubMed](http://www.webmd.com/add-adhd/guide/adhd-adults)
 
 ## Devices and Supports
 
