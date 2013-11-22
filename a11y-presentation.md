@@ -20,9 +20,25 @@ Web accessibility means making online content usable (and enjoyable!) for people
 ## Major Use Cases
 
 * **Vision** (blindness, low vision, color blindness)
+	* Over 6,500,000 adults, most of them between 18 and 64, and over 650,000 children in the US reported issues related to low vision or blindness in 2011.
+	* About 1 in 10 men are color blind.
 * **Hearing** (deafness)
-* **Motor skills** (trouble using a mouse)
+	* About 36 million adults in the US have some form of hearing loss.
+	* About 2 in 1000 children in the US are born deaf.
+* **Motor skills** (trouble with using a mouse)
 * **Cognitive and learning issues** (autism, dyslexia, ADD, etc.)
+	* About 1 in 88 children in the US are on the autism spectrum.
+	* Probably about 20% of people have some form of dyslexia.
+	* 11% of children 4-17 years of age, and about 4% of adults, in the US have been diagnosed with ADD.
+
+References:
+[Statistical Facts about Blindness in the United States (2011)](https://nfb.org/factsaboutblindnessintheus)
+[Color blindness - PubMed Health](http://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0001997/)
+[Quick Statistics - National Institute on Deafness and Other Communication Disorders](http://www.nidcd.nih.gov/health/statistics/Pages/quick.aspx)
+[Autism Spectrum Disorders - CDC](http://www.cdc.gov/ncbddd/autism/data.html)
+[Debunking the Myths about Dyslexia - University of Michigan](http://dyslexiahelp.umich.edu/dyslexics/learn-about-dyslexia/what-is-dyslexia/debunking-common-myths-about-dyslexia)
+[ADHD - CDC](http://www.cdc.gov/ncbddd/adhd/data.html)
+[ADHD in Adults - PubMed](http://www.webmd.com/add-adhd/guide/adhd-adults)
 
 ## Devices and Supports
 
