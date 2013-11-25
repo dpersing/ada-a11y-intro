@@ -70,8 +70,9 @@ WCAG is currently in its second version, so it's often called WCAG 2.0. WCAG als
 ## How to Make Accessible Content
 
 1. Use HTML, CSS, and Javascript correctly.
-2. Create good content with logical organization that humans and machines can understand.
-3. Supplement valid HTML with some extra attributes that provide more information to screen readers, when appropriate.
+1. Create good content with logical organization that humans and machines can understand.
+1. Create captions and/or transcripts for video. (YouTube does this by default, for example.)
+1. Supplement valid HTML with some extra attributes that provide more information to screen readers, when appropriate.
 
 That's it!
 
