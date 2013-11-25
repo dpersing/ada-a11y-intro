@@ -16,12 +16,17 @@
     <![endif]-->
 
     <style>
-      /* overrides to Bootstrap defaults to help accessibility */
+      /* overrides to Bootstrap defaults to help color contrast */
       .navbar-default .navbar-brand { color: #727272; }
+
       .navbar-default .navbar-toggle .icon-bar { background-color: #727272; }
+
       .navbar-collapse .navbar-nav.navbar-left:first-child { margin-left: 0; }
+
       .navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav>.dropdown>a .caret { color: #2d76b5; }
+
       .navbar-default .navbar-nav>.dropdown>a .caret { border-top-color: #2d76b5; border-bottom-color: #2d76b5; }
+
       .navbar-default .navbar-nav>li>a:hover,
       .navbar-default .navbar-nav>li>a:focus,
       .dropdown-menu>li>a:hover,
@@ -29,21 +34,27 @@
       .navbar-default .navbar-nav>.open>a,
       .navbar-default .navbar-nav>.open>a:hover,
       .navbar-default .navbar-nav>.open>a:focus { background: #2d76b5; color: #fff; }
+
       .navbar-default .navbar-nav>.dropdown>a:hover .caret,
       .navbar-default .navbar-nav>.open>a:hover .caret,
       .navbar-default .navbar-nav>.dropdown>a:focus .caret,
       .navbar-default .navbar-nav>.open>a:focus .caret { color: #fff; border-top-color: #fff; border-bottom-color: #fff; }
+
       .panel-success>.panel-heading { color: #063; }
+
       .btn-primary { background: #317ab9; }
-      .panel-primary>.panel-heading { background: #317ab9; border-color: #317ab9;; }
+
+      .panel-primary>.panel-heading { background: #317ab9; border-color: #317ab9; }
+
       .btn-success { background: #2c882c; }
+
       a { color: #2b74b3; }
     </style>
   </head>
   <body class="container">
 
     <header>
-      <nav class="navbar navbar-default" role="navigation">
+      <nav class="navbar navbar-default" role="navigation"><!-- a11y: WAI-ARIA navigation role wraps all navigation elements -->
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
@@ -59,8 +70,8 @@
           <ul class="nav navbar-nav navbar-left">
             <li><a href="about.html">About</a></li>
             <li class="dropdown">
-              <a href="#" data-toggle="dropdown">Locations <span class="caret" aria-hidden="true"></span></a>
-              <ul class="dropdown-menu">
+              <a href="#" id="locations" data-toggle="dropdown">Locations <span class="caret" aria-hidden="true"></span></a><!-- a11y: aria-hidden="true" makes screen readers skip any content; here we're having it skip the "caret" icon since it's a purely visual element -->
+              <ul class="dropdown-menu" aria-labelledby="locations"><!-- a11y: aria-labelledby creates a link between this list of links and their parent list item -->
                 <li><a href="#">Honolulu</a></li>
                 <li><a href="#">Kahului</a></li>
                 <li><a href="#">Kailua-Kona</a></li>
@@ -74,7 +85,7 @@
 
           <form class="navbar-form navbar-right" role="search">
           <div class="form-group">
-            <label class="sr-only" for="search-box">Search</label>
+            <label class="sr-only" for="search-box">Submit search</label>
             <input type="text" id="search-box" class="form-control" placeholder="Search">
           </div>
 
@@ -189,10 +200,10 @@
           </aside>
         </section>
 
-        <section id="booking" class="col-sm-6">
+        <section class="col-sm-6">
           <div class="panel panel-primary">
             <div class="panel-heading">
-              <h2 class="panel-title"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Book a Stay</h2>
+              <h2 id="booking" class="panel-title"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Book a Stay</h2>
             </div>
 
             <div class="panel-body">
@@ -300,7 +311,7 @@
                   </div>
                 </fieldset>
 
-                <button type="submit" class="btn btn-lg btn-success">Submit</button>
+                <button type="submit" class="btn btn-lg btn-success" aria-labelledby="booking">Submit</button>
               </form>
             </div>
           </div>
