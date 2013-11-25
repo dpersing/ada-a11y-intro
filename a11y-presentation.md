@@ -8,7 +8,11 @@ Web accessibility means making online content usable (and enjoyable!) for people
 
 ## Why Be Accessible Online?
 
-* The web is an equalizing force in people's ability to get things done on a daily basis
+* The web is an equalizing force in people's ability to get things done on a daily basis:
+	* Paying bills
+	* Buying essentials
+	* Signing up for services
+	* Communicating
 * Accessible websites typically are search engine-friendly websites
 * Accessible websites typically work well on mobile and tablet devices
 * It's easier than it sounds!
@@ -16,9 +20,25 @@ Web accessibility means making online content usable (and enjoyable!) for people
 ## Major Use Cases
 
 * **Vision** (blindness, low vision, color blindness)
+	* Over 6,500,000 adults, most of them between 18 and 64, and over 650,000 children in the US reported issues related to low vision or blindness in 2011.
+	* About 1 in 10 men are color blind.
 * **Hearing** (deafness)
-* **Motor skills** (inability to use a mouse)
+	* About 36 million adults in the US have some form of hearing loss.
+	* About 2 in 1000 children in the US are born deaf.
+* **Motor skills** (trouble with using a mouse)
 * **Cognitive and learning issues** (autism, dyslexia, ADD, etc.)
+	* About 1 in 88 children in the US are on the autism spectrum.
+	* Probably about 20% of people have some form of dyslexia.
+	* 11% of children 4-17 years of age, and about 4% of adults, in the US have been diagnosed with ADD.
+
+References:
+* [Statistical Facts about Blindness in the United States (2011)](https://nfb.org/factsaboutblindnessintheus)
+* [Color blindness - PubMed Health](http://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0001997/)
+* [Quick Statistics - National Institute on Deafness and Other Communication Disorders](http://www.nidcd.nih.gov/health/statistics/Pages/quick.aspx)
+* [Autism Spectrum Disorders - CDC](http://www.cdc.gov/ncbddd/autism/data.html)
+* [Debunking the Myths about Dyslexia - University of Michigan](http://dyslexiahelp.umich.edu/dyslexics/learn-about-dyslexia/what-is-dyslexia/debunking-common-myths-about-dyslexia)
+* [ADHD - CDC](http://www.cdc.gov/ncbddd/adhd/data.html)
+* [ADHD in Adults - PubMed](http://www.webmd.com/add-adhd/guide/adhd-adults)
 
 ## Devices and Supports
 
@@ -50,8 +70,8 @@ WCAG is currently in its second version, so it's often called WCAG 2.0. WCAG als
 ## How to Make Accessible Content
 
 1. Use HTML, CSS, and Javascript correctly.
-2. Create good content with logical organization that humans and machines can understand.
-3. Supplement valid HTML with some extra attributes that provide more information to screen readers, when appropriate.
+1. Create good content with logical organization that humans and machines can understand, including text alternatives for all visual content. (YouTube does captions, for example, and creates them by default!)
+1. Supplement valid HTML with some extra attributes that provide more information to screen readers, when appropriate.
 
 That's it!
 
@@ -68,7 +88,7 @@ The first step for automated testing is validating your HTML.
 
 #### WCAG audit
 
-The second step is running an automated test against WCAG 2.0 principles. These tests will sometimes find false positives for issues, but are a great way to get accustomed to WCAG and techniques for fixing a11y issues issues.
+The second step is running an automated test against WCAG 2.0 principles. These tests will sometimes find false positives for issues, but are a great way to get accustomed to WCAG and techniques for identifying and fixing a11y issues.
 
 * [Chrome Accessibility Developer Tools](https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en) is an add-on for Chrome that adds an accessibility audit to the existing Web Inspector tools.
 * [HTML_Codesniffer](http://squizlabs.github.io/HTML_CodeSniffer/) is an in-browser tool and bookmarklet for any browser that checks your code against WCAG 2.0.
@@ -82,19 +102,21 @@ Test using all of the interactive parts of your page using the keyboard alone.
 * **Tab:** Move between interactive elements.
 * **Return/Enter:** "Click" on links or buttons.
 * **Up and down arrows:** Select a radio button from a set, or an option from a select element.
-* **Spacebar:** Select a choice from a radio button set or select element.
+* **Spacebar:** Select a choice from a select element, or check a checkbox.
 
 #### Screen reader testing
 
-Test your page with a screen reader, or a screen reader emulator, to see how a user might actually hear the page.
+Test your page with a screen reader, or a screen reader emulator, to see how a user might actually hear the page. **Keep in mind that all screen readers work slightly differently: they have different shortcut keys and may identify (or not identify) information on the page differently.**
 
-Today we'll be testing with VoiceOver on your Mac. To use VoiceOver:
+Today we'll be testing with VoiceOver, the screenreader that comes free with your Mac. To use VoiceOver:
 
 1. Open System Preferences > Accessibility.
 1. Select "VoiceOver" from the menu.
 1. Check the box.
 
-Or, just press Command (&#8984;) + F5 to toggle VoiceOver on or off.
+Or, just press **Command (&#8984;) + F5** to toggle VoiceOver on or off.
+
+The first time you run VoiceOver you'll be prompted to go through a tutorial. Use the tutorial and the reference links at the bottom to learn VoiceOver's keyboard shortcuts.
 
 ![OSX System Preferences screen, with the Accessibility menu item circled in pink](http://dpersing.github.io/ada-a11y-intro/demo/img/system-a11y-osx.png)
 
@@ -132,23 +154,25 @@ Links are read by their text, so make text links clear and unique.
 
 ```
 <a href="http://adadevelopersacademy.org/">This link</a>
+```
 
 and
 
+```
 <a href="https://twitter.com/adaacademy">this link</a>
-
-will read the same to screen readers, even though they go to different URLs.
 ```
 
-#### Images
+will usually read the same to screen readers, even though they go to different URLs.
+
+#### Images and other media
 
 Images should have `alt` attributes that provide a useful description of the image. If the image is for decoration only, it should be applied through CSS, or should have an empty `alt` value.
 
 ```
-<img src="http://placekitten.com/300/300" alt="an adorable tabby kitten" />
+<img src="http://placekitten.com/300/300" alt="an adorable tabby kitten">
 ```
 
-Always have a text equivalent for information that is presented in a non-text format, such as images, standalone icons, etc.
+Always have a text equivalent for information that is presented in a non-text format, such as images, standalone icons, videos, etc.
 
 #### Data tables
 
@@ -224,6 +248,16 @@ Form fields should always have labels or, in the case of buttons, clear text. El
 </form>
 ```
 
+There are also a couple of ways to tie labels to fields:
+
+* Nest the field inside the label like above
+* Use attributes to tie the label to the field like this:
+
+```
+<label for="phone">Phone</label>
+<input type="text" id="phone">
+```
+
 ### CSS for Accessibility
 
 #### Color contrast for text
@@ -263,7 +297,7 @@ WAI-ARIA consists of different types of attributes used to convey more informati
 Here are some examples!
 
 * `role` indicates the element's role on the page. In this case, we have a navigation group, which most newer screen readers will be able to identify.
-* `aria-labelledby` will help tie a clear relationship between, say, shorts and their bottoms category.
+* `aria-labelledby` will help tie a clear relationship between things that are in groups or hierarchies.
 
 ```
 <nav role="navigation">
@@ -287,7 +321,7 @@ Here are some examples!
 
 ```
 
-There's a whole set of `role` attributes called Landmark Roles that can be applied to different areas of the page. These form a kind of outline of the types of content that appear on the page and help screen reader users "skim" the page.
+There's are whole sets of `role` attributes called Landmark Roles and Document Structure Roles that can be applied to different areas of the page. These form a kind of outline of the types of content that appear on the page and help screen reader users "skim" the page.
 
 ```
 <header>
@@ -350,6 +384,7 @@ Javascript can be used in conjunction with WAI-ARIA attributes to create a rich,
 ### Tools
 
 * [Accessibility Developer Tools](https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en) extension for Chrome
+* [HTML_Codesniffer](http://squizlabs.github.io/HTML_CodeSniffer/) browser bookmarklet and in-browser audit tool
 * Lou Verou's [Contrast Ratio](http://leaverou.github.io/contrast-ratio/) tool
 * [VoiceOver on OSX Commands and Gestures](http://www.apple.com/voiceover/info/guide/_1131.html)
 * [VoiceOver on iOS Gestures](http://lab.dotjay.co.uk/notes/voiceover-ios/learning-ios-voiceover-gestures/)
@@ -363,6 +398,6 @@ Javascript can be used in conjunction with WAI-ARIA attributes to create a rich,
 1. Test your current Sinatra projects for accessibility using VoiceOver and Chrome Accessibility Developer Tools. If it helps, close your eyes! (Also potentially be kind to your neighbors by wearing headphones.)
 1. Update your CSS with any color contrast changes. You can use the Contrast Ratio tool to try out different contrasts.
 1. Update your HTML with WAI-ARIA Landmark Roles when they are applicable.
-1. Update any other HTML elemnents or attributes that aren't valid or don't read as you expect them to.
+1. Update any other HTML elements or attributes that aren't valid or don't read as you expect them to.
 1. Rerun your tests.
 1. Have a partner test your project with VoiceOver.
