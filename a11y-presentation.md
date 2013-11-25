@@ -164,7 +164,7 @@ and
 
 will usually read the same to screen readers, even though they go to different URLs.
 
-#### Images
+#### Images and other media
 
 Images should have `alt` attributes that provide a useful description of the image. If the image is for decoration only, it should be applied through CSS, or should have an empty `alt` value.
 
@@ -172,7 +172,7 @@ Images should have `alt` attributes that provide a useful description of the ima
 <img src="http://placekitten.com/300/300" alt="an adorable tabby kitten">
 ```
 
-Always have a text equivalent for information that is presented in a non-text format, such as images, standalone icons, etc.
+Always have a text equivalent for information that is presented in a non-text format, such as images, standalone icons, videos, etc.
 
 #### Data tables
 
