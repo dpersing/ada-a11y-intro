@@ -349,7 +349,7 @@ There's are whole sets of `role` attributes called Landmark Roles and Document S
 
 ## Putting It All Together
 
-Good news, everyone! We've won a fabulous vacation. [Let's run our tests while we learn about the trip!](http://dpersing.github.io/ada-a11y-intro/demo/vacation.html)
+Good news, everyone! We're going on vacation. [Let's run our tests while we learn about the trip!](http://dpersing.github.io/ada-a11y-intro/demo/vacation.html)
 
 ## More Advanced Stuff
 
