@@ -102,7 +102,7 @@ Test using all of the interactive parts of your page using the keyboard alone.
 * **Tab:** Move between interactive elements.
 * **Return/Enter:** "Click" on links or buttons.
 * **Up and down arrows:** Select a radio button from a set, or an option from a select element.
-* **Spacebar:** Select a choice from a radio button set or select element.
+* **Spacebar:** Select a choice from a select element, or check a checkbox.
 
 #### Screen reader testing
 
