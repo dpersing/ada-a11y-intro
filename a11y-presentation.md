@@ -297,7 +297,7 @@ WAI-ARIA consists of different types of attributes used to convey more informati
 Here are some examples!
 
 * `role` indicates the element's role on the page. In this case, we have a navigation group, which most newer screen readers will be able to identify.
-* `aria-labelledby` will help tie a clear relationship between, say, shorts and their bottoms category.
+* `aria-labelledby` will help tie a clear relationship between things that are in groups or hierarchies.
 
 ```
 <nav role="navigation">
