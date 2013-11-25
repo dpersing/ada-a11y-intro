@@ -248,6 +248,16 @@ Form fields should always have labels or, in the case of buttons, clear text. El
 </form>
 ```
 
+There are also a couple of ways to tie labels to fields:
+
+* Nest the field inside the label like above
+* Use attributes to tie the label to the field like this:
+
+```
+<label for="phone">Phone</label>
+<input type="text" id="phone">
+```
+
 ### CSS for Accessibility
 
 #### Color contrast for text
