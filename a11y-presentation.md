@@ -106,9 +106,9 @@ Test using all of the interactive parts of your page using the keyboard alone.
 
 #### Screen reader testing
 
-Test your page with a screen reader, or a screen reader emulator, to see how a user might actually hear the page.
+Test your page with a screen reader, or a screen reader emulator, to see how a user might actually hear the page. **Keep in mind that all screen readers work slightly differently: they have different shortcut keys and may identify (or not identify) information on the page differently.**
 
-Today we'll be testing with VoiceOver on your Mac. To use VoiceOver:
+Today we'll be testing with VoiceOver, the screenreader that comes free with your Mac. To use VoiceOver:
 
 1. Open System Preferences > Accessibility.
 1. Select "VoiceOver" from the menu.
