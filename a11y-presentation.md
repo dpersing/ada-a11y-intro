@@ -70,8 +70,8 @@ WCAG is currently in its second version, so it's often called WCAG 2.0. WCAG als
 ## How to Make Accessible Content
 
 1. Use HTML, CSS, and Javascript correctly.
-2. Create good content with logical organization that humans and machines can understand.
-3. Supplement valid HTML with some extra attributes that provide more information to screen readers, when appropriate.
+1. Create good content with logical organization that humans and machines can understand, including text alternatives for all visual content. (YouTube does captions, for example, and creates them by default!)
+1. Supplement valid HTML with some extra attributes that provide more information to screen readers, when appropriate.
 
 That's it!
 
@@ -102,19 +102,21 @@ Test using all of the interactive parts of your page using the keyboard alone.
 * **Tab:** Move between interactive elements.
 * **Return/Enter:** "Click" on links or buttons.
 * **Up and down arrows:** Select a radio button from a set, or an option from a select element.
-* **Spacebar:** Select a choice from a radio button set or select element.
+* **Spacebar:** Select a choice from a select element, or check a checkbox.
 
 #### Screen reader testing
 
-Test your page with a screen reader, or a screen reader emulator, to see how a user might actually hear the page.
+Test your page with a screen reader, or a screen reader emulator, to see how a user might actually hear the page. **Keep in mind that all screen readers work slightly differently: they have different shortcut keys and may identify (or not identify) information on the page differently.**
 
-Today we'll be testing with VoiceOver on your Mac. To use VoiceOver:
+Today we'll be testing with VoiceOver, the screenreader that comes free with your Mac. To use VoiceOver:
 
 1. Open System Preferences > Accessibility.
 1. Select "VoiceOver" from the menu.
 1. Check the box.
 
-Or, just press Command (&#8984;) + F5 to toggle VoiceOver on or off.
+Or, just press **Command (&#8984;) + F5** to toggle VoiceOver on or off.
+
+The first time you run VoiceOver you'll be prompted to go through a tutorial. Use the tutorial and the reference links at the bottom to learn VoiceOver's keyboard shortcuts.
 
 ![OSX System Preferences screen, with the Accessibility menu item circled in pink](http://dpersing.github.io/ada-a11y-intro/demo/img/system-a11y-osx.png)
 
@@ -152,23 +154,25 @@ Links are read by their text, so make text links clear and unique.
 
 ```
 <a href="http://adadevelopersacademy.org/">This link</a>
+```
 
 and
 
+```
 <a href="https://twitter.com/adaacademy">this link</a>
-
-will read the same to screen readers, even though they go to different URLs.
 ```
 
-#### Images
+will usually read the same to screen readers, even though they go to different URLs.
+
+#### Images and other media
 
 Images should have `alt` attributes that provide a useful description of the image. If the image is for decoration only, it should be applied through CSS, or should have an empty `alt` value.
 
 ```
-<img src="http://placekitten.com/300/300" alt="an adorable tabby kitten" />
+<img src="http://placekitten.com/300/300" alt="an adorable tabby kitten">
 ```
 
-Always have a text equivalent for information that is presented in a non-text format, such as images, standalone icons, etc.
+Always have a text equivalent for information that is presented in a non-text format, such as images, standalone icons, videos, etc.
 
 #### Data tables
 
@@ -244,6 +248,16 @@ Form fields should always have labels or, in the case of buttons, clear text. El
 </form>
 ```
 
+There are also a couple of ways to tie labels to fields:
+
+* Nest the field inside the label like above
+* Use attributes to tie the label to the field like this:
+
+```
+<label for="phone">Phone</label>
+<input type="text" id="phone">
+```
+
 ### CSS for Accessibility
 
 #### Color contrast for text
@@ -283,7 +297,7 @@ WAI-ARIA consists of different types of attributes used to convey more informati
 Here are some examples!
 
 * `role` indicates the element's role on the page. In this case, we have a navigation group, which most newer screen readers will be able to identify.
-* `aria-labelledby` will help tie a clear relationship between, say, shorts and their bottoms category.
+* `aria-labelledby` will help tie a clear relationship between things that are in groups or hierarchies.
 
 ```
 <nav role="navigation">
