@@ -154,13 +154,15 @@ Links are read by their text, so make text links clear and unique.
 
 ```
 <a href="http://adadevelopersacademy.org/">This link</a>
+```
 
 and
 
-<a href="https://twitter.com/adaacademy">this link</a>
-
-will read the same to screen readers, even though they go to different URLs.
 ```
+<a href="https://twitter.com/adaacademy">this link</a>
+```
+
+will usually read the same to screen readers, even though they go to different URLs.
 
 #### Images
 
