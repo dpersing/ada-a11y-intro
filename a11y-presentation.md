@@ -114,7 +114,7 @@ Today we'll be testing with VoiceOver, the screenreader that comes free with you
 1. Select "VoiceOver" from the menu.
 1. Check the box.
 
-Or, just press Command (&#8984;) + F5 to toggle VoiceOver on or off.
+Or, just press **Command (&#8984;) + F5** to toggle VoiceOver on or off.
 
 The first time you run VoiceOver you'll be prompted to go through a tutorial. Use the tutorial and the reference links at the bottom to learn VoiceOver's keyboard shortcuts.
 
