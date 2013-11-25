@@ -116,6 +116,8 @@ Today we'll be testing with VoiceOver, the screenreader that comes free with you
 
 Or, just press Command (&#8984;) + F5 to toggle VoiceOver on or off.
 
+The first time you run VoiceOver you'll be prompted to go through a tutorial. Use the tutorial and the reference links at the bottom to learn VoiceOver's keyboard shortcuts.
+
 ![OSX System Preferences screen, with the Accessibility menu item circled in pink](http://dpersing.github.io/ada-a11y-intro/demo/img/system-a11y-osx.png)
 
 ## Some Examples
