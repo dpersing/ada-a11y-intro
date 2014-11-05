@@ -31,6 +31,8 @@ Web accessibility means making online content usable (and enjoyable!) for people
 	* Probably about 20% of people have some form of dyslexia.
 	* 11% of children 4-17 years of age, and about 4% of adults, in the US have been diagnosed with ADD.
 
+In general, it's estimated that 12-20% of people have a disability of some kind.
+
 References:
 * [Statistical Facts about Blindness in the United States (2011)](https://nfb.org/factsaboutblindnessintheus)
 * [Color blindness - PubMed Health](http://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0001997/)
