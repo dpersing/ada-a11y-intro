@@ -292,11 +292,11 @@ This can be done with some CSS that we can apply with a class on any element:
 
 ### WAI-ARIA
 
-[Web Accessibility Initiative Accessible Rich Internet Applications](http://www.w3.org/TR/wai-aria/) (WAI-ARIA) are designed to enhance already well-formed HTML for even greater accessibility.
+The [Web Accessibility Initiative's Accessible Rich Internet Application](http://www.w3.org/TR/wai-aria/) spec (WAI-ARIA) is designed to enhance already well-formed HTML for even greater accessibility.
 
-WAI-ARIA consists of different types of attributes used to convey more information about elements and relationships between elements to screen readers. Newer screen readers can identify these values and use them when they're announcing content to users.
+WAI-ARIA consists of different types of attributes used to convey more information about elements, relationships and states to screen readers. Contemporary screen readers can identify these attributes and use them when they're announcing content to users.
 
-Here are some examples!
+Here are some examples:
 
 * `role` indicates the element's role on the page. In this case, we have a navigation group, which most newer screen readers will be able to identify.
 * `aria-labelledby` will help tie a clear relationship between things that are in groups or hierarchies.
@@ -323,7 +323,7 @@ Here are some examples!
 
 ```
 
-There's are whole sets of `role` attributes called Landmark Roles and Document Structure Roles that can be applied to different areas of the page. These form a kind of outline of the types of content that appear on the page and help screen reader users "skim" the page.
+There are sets of `role` attributes called Landmark Roles and Document Structure Roles that can be applied to different areas of the page. These form a kind of outline of the types of content that appear on the page and help screen reader users "skim" the page.
 
 ```
 <header>
@@ -397,7 +397,7 @@ Javascript can be used in conjunction with WAI-ARIA attributes to create a rich,
 
 ## Exercises
 
-1. Test your current Sinatra projects for accessibility using VoiceOver and Chrome Accessibility Developer Tools. If it helps, close your eyes! (Also potentially be kind to your neighbors by wearing headphones.)
+1. Test your current projects for accessibility using VoiceOver with Safari, and Chrome Accessibility Developer Tools. If it helps, close your eyes! (Also potentially be kind to your neighbors by wearing headphones.)
 1. Update your CSS with any color contrast changes. You can use the Contrast Ratio tool to try out different contrasts.
 1. Update your HTML with WAI-ARIA Landmark Roles when they are applicable.
 1. Update any other HTML elements or attributes that aren't valid or don't read as you expect them to.
